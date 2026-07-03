@@ -9,7 +9,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
         .serif-font { font-family: 'Playfair Display', serif; }
-        .tab-active { margin-bottom: -1px; }
+        
+        /* Estilos exactos para las pestañas */
+        .tab-active {
+            background-color: white;
+            border-top: 1px solid #d1d5db;
+            border-left: 1px solid #d1d5db;
+            border-right: 1px solid #d1d5db;
+            border-bottom: 2px solid white;
+            margin-bottom: -1px;
+            z-index: 10;
+        }
+        .tab-inactive {
+            border-bottom: 1px solid #d1d5db;
+        }
+        .tabs-container {
+            border-bottom: 1px solid #d1d5db;
+        }
     </style>
 </head>
 <body class="bg-white text-black font-sans">
@@ -39,7 +55,7 @@
                     <a href="#" class="hover:text-black">U.S.</a>
                     <a href="#" class="hover:text-black">International</a>
                     <a href="#" class="hover:text-black">Canada</a>
-                    <span class="text-black border-b border-black">Español</span>
+                    <span class="text-black border-b border-black pb-[1px]">Español</span>
                     <a href="#" class="hover:text-black">中文</a>
                 </div>
                 <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-12 md:h-16 object-contain">
@@ -76,37 +92,40 @@
     <!-- Main Content Area -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         
-        <!-- Portada Inicial: Se oculta si page > 1 -->
+        <!-- ========================================== -->
+        <!-- PORTADA ESTÁTICA COMPLETA (Solo Página 1) -->
+        <!-- ========================================== -->
         <div id="static-frontpage">
+            
+            <!-- BLOQUE HERO (Arriba) -->
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-10 border-b border-gray-300 pb-8">
-                <!-- Columna Izquierda / Principal (Abarca 3 cols en lg) -->
+                <!-- Principal (3 columnas) -->
                 <div class="lg:col-span-3">
-                    <article class="mb-8 border-b border-gray-200 pb-6 flex flex-col md:flex-row gap-6 group">
+                    <article class="api-slot mb-8 border-b border-gray-200 pb-6 flex flex-col md:flex-row gap-6 group cursor-pointer">
                         <div class="w-full md:w-1/3 order-2 md:order-1">
-                            <h2 class="serif-font font-bold text-xl md:text-3xl leading-tight mb-3">La deuda de EE. UU. con Venezuela</h2>
-                            <p class="text-gray-600 text-sm md:text-base">Cada vez hay más expectativas sobre lo que el gobierno de Trump podría hacer para ayudar tras dos terremotos devastadores.</p>
+                            <h2 class="api-title serif-font font-bold text-xl md:text-3xl leading-tight mb-3">Cargando noticia principal...</h2>
+                            <p class="api-desc text-gray-600 text-sm md:text-base">Actualizando información de la API de Mediastack.</p>
                         </div>
                         <div class="w-full md:w-2/3 order-1 md:order-2">
-                            <img src="https://via.placeholder.com/600x400" alt="Noticia Principal" class="w-full h-auto object-cover">
+                            <img src="https://via.placeholder.com/600x400?text=Cargando+Imagen" class="api-img w-full h-auto object-cover">
                         </div>
                     </article>
 
-                    <!-- Subnoticias Principales -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <article class="group">
-                            <img src="https://via.placeholder.com/400x250" alt="Subnoticia 1" class="w-full h-48 object-cover mb-3">
-                            <h3 class="serif-font font-bold text-xl mb-2">El movimiento MAGA guarda silencio ante los millardos en ganancias personales de Trump</h3>
-                            <p class="text-gray-600 text-sm">Para muchos de sus seguidores, dichas ganancias son muestra de la perspicacia empresarial que siempre le han admirado.</p>
+                        <article class="api-slot group cursor-pointer">
+                            <img src="https://via.placeholder.com/400x250?text=Cargando" class="api-img w-full h-48 object-cover mb-3">
+                            <h3 class="api-title serif-font font-bold text-xl mb-2">Cargando...</h3>
+                            <p class="api-desc text-gray-600 text-sm">...</p>
                         </article>
-                        <article class="group">
-                            <img src="https://via.placeholder.com/400x250" alt="Subnoticia 2" class="w-full h-48 object-cover mb-3">
-                            <h3 class="serif-font font-bold text-xl mb-2">Ucrania intensifica la presión sobre Putin con ataques en Crimea</h3>
-                            <p class="text-gray-600 text-sm">Los bombardeos con drones y los problemas de abastecimiento buscan aumentar el costo de la guerra para el Kremlin.</p>
+                        <article class="api-slot group cursor-pointer">
+                            <img src="https://via.placeholder.com/400x250?text=Cargando" class="api-img w-full h-48 object-cover mb-3">
+                            <h3 class="api-title serif-font font-bold text-xl mb-2">Cargando...</h3>
+                            <p class="api-desc text-gray-600 text-sm">...</p>
                         </article>
                     </div>
                 </div>
 
-                <!-- Columna Derecha Lateral -->
+                <!-- Lateral (1 columna) -->
                 <div class="lg:col-span-1 border-t lg:border-t-0 lg:border-l border-gray-300 lg:pl-6 pt-6 lg:pt-0 flex flex-col gap-6">
                     <div class="bg-green-800 text-white p-4 flex flex-col mb-4">
                         <span class="serif-font font-bold text-2xl mb-2">El Times</span>
@@ -114,80 +133,162 @@
                         <p class="text-xs mt-1 mb-3 opacity-90">Suscríbete para recibir por correo el boletín gratuito de The New Mexico Times en español.</p>
                         <button class="bg-[#567b95] hover:bg-[#326891] text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded w-max">Suscribirse</button>
                     </div>
-                    <article class="border-b border-gray-200 pb-6 group">
-                        <h4 class="serif-font font-bold text-lg mb-2">Lionel Messi, eterno y fugaz</h4>
-                        <p class="text-gray-600 text-sm mb-2">¿Cómo están disfrutando sus legiones de fans la que podría ser la última Copa Mundial de su ídolo?</p>
-                        <img src="https://via.placeholder.com/300x200" alt="Lateral 1" class="w-full h-auto object-cover">
+                    <article class="api-slot border-b border-gray-200 pb-6 group cursor-pointer">
+                        <h4 class="api-title serif-font font-bold text-lg mb-2">Cargando...</h4>
+                        <p class="api-desc text-gray-600 text-sm mb-2">...</p>
+                        <img src="https://via.placeholder.com/300x200?text=Cargando" class="api-img w-full h-auto object-cover">
                     </article>
-                    <article class="group">
+                    <article class="api-slot group cursor-pointer">
                         <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1 block">Análisis Noticioso</span>
-                        <h4 class="serif-font font-bold text-lg mb-2">¿El estadio más grande del mundo puede explicar la economía global?</h4>
-                        <p class="text-gray-600 text-sm">Las altas tasas de crecimiento y el auge de las exportaciones ocultan profundas frustraciones en uno de los países más ambiciosos.</p>
+                        <h4 class="api-title serif-font font-bold text-lg mb-2">Cargando...</h4>
+                        <p class="api-desc text-gray-600 text-sm">...</p>
                     </article>
                 </div>
             </div>
 
-            <!-- Sports Widget -->
+            <!-- ROW 1 (4 Columnas) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 border-b border-gray-300 pb-8">
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+            </div>
+
+            <!-- ROW 2 (4 Columnas) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-b border-gray-300 pb-8">
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+            </div>
+
+            <!-- WIDGET DE DEPORTES -->
             <div class="mb-12 border-b border-gray-300 pb-6">
-                <div class="flex justify-between items-end mb-4">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-2">
                     <h3 class="font-bold text-lg">Partidos de hoy</h3>
                     <span id="sports-date" class="text-xs text-gray-500">Actualizando...</span>
                 </div>
                 <div id="sports-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-                    <!-- Los resultados deportivos se cargarán aquí -->
-                    <div class="text-gray-500 text-xs animate-pulse">Cargando resultados en vivo...</div>
+                    <div class="text-gray-500 text-xs animate-pulse">Cargando resultados de TheSportsDB...</div>
                 </div>
                 <div class="mt-4">
                     <a href="#" class="text-xs text-black font-bold hover:underline">Revisa el calendario completo ›</a>
                 </div>
             </div>
-            
-            <!-- Banner Ad -->
+
+            <!-- BANNER AD (FOREVERSPIN) -->
             <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-200 py-4 mb-12 flex justify-center">
                 <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer">
                     <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Ad" class="max-h-[120px] object-contain">
                 </a>
             </div>
-        </div>
 
-        <!-- SECCIÓN DE NOTICIAS CON SCROLL INFINITO (Lo más reciente) -->
-        <div class="w-full">
-            <!-- Pestañas Recreadas Exactamente como la Imagen -->
-            <div class="border-t-[1.5px] border-black flex items-end pt-0">
-                <!-- Pestaña Activa: Lo más reciente -->
-                <div class="border border-gray-300 border-b-white bg-white px-5 py-2 text-[#333] font-bold text-[15px] tab-active z-10 cursor-default">
-                    Lo más reciente
+            <!-- SECCIÓN ESPECIAL (4 Columnas) -->
+            <div class="mb-12 border-b border-gray-300 pb-8">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-1">
+                    <h3 class="font-bold text-lg">Especial</h3>
+                    <a href="#" class="text-[10px] text-gray-500 hover:underline uppercase">Más en Especial ›</a>
                 </div>
-                <!-- Pestaña Inactiva: Buscar -->
-                <div class="px-5 py-2 text-gray-500 font-medium text-[15px] flex items-center cursor-pointer hover:text-gray-800 transition-colors">
-                    <svg class="w-[18px] h-[18px] mr-1.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    Buscar
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Especial" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Especial" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Especial" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Especial" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">Cargando...</h3></article>
                 </div>
             </div>
-            <!-- Línea inferior que conecta las pestañas -->
-            <div class="border-b border-gray-300 w-full mb-8"></div>
+
+            <!-- BANNER AD -->
+            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-200 py-4 mb-12 flex justify-center">
+                <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank">
+                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" class="max-h-[120px] object-contain">
+                </a>
+            </div>
+
+            <!-- SECCIÓN ESTADOS UNIDOS (5 Columnas) -->
+            <div class="mb-12 border-b border-gray-300 pb-8">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-1">
+                    <h3 class="font-bold text-lg">Estados Unidos</h3>
+                    <a href="#" class="text-[10px] text-gray-500 hover:underline uppercase">Más en Estados Unidos ›</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                </div>
+            </div>
+
+            <!-- SECCIÓN NOTAS DE BIENESTAR (5 Columnas) -->
+            <div class="mb-12 border-b border-gray-300 pb-8">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-1">
+                    <h3 class="font-bold text-lg">Notas de bienestar</h3>
+                    <a href="#" class="text-[10px] text-gray-500 hover:underline uppercase">Más en Notas de bienestar ›</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">Cargando...</h3></article>
+                </div>
+            </div>
+
+            <!-- ULTIMO BANNER AD -->
+            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-200 py-4 mb-12 flex justify-center">
+                <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank">
+                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" class="max-h-[120px] object-contain">
+                </a>
+            </div>
+
+        </div> <!-- Fin de Portada Estática -->
+
+        <!-- ========================================== -->
+        <!-- FEED DINÁMICO (Lo más reciente - Scroll Infinito) -->
+        <!-- ========================================== -->
+        
+        <!-- Pestañas (Diseño Exacto) -->
+        <div class="w-full pt-8">
+            <!-- Contenedor general que dibuja la línea gruesa superior -->
+            <div class="border-t-[1.5px] border-black pt-3">
+                <div class="flex items-end tabs-container relative top-[1px]">
+                    
+                    <!-- Pestaña Activa -->
+                    <div class="px-6 py-2.5 text-[#111] font-bold text-[15px] tab-active cursor-default">
+                        Lo más reciente
+                    </div>
+                    
+                    <!-- Pestaña Inactiva (Buscar) -->
+                    <div class="px-6 py-2.5 text-gray-500 font-medium text-[15px] flex items-center cursor-pointer hover:text-gray-800 transition-colors">
+                        <svg class="w-4 h-4 mr-1.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        Buscar
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="mb-8"></div> <!-- Espaciador -->
         </div>
 
         <div class="w-full flex flex-col md:flex-row gap-8">
-            <!-- Feed de Noticias a la izquierda (75%) -->
+            <!-- Contenedor del Feed de Noticias -->
             <div class="w-full md:w-3/4">
                 <div id="news-list-container" class="flex flex-col gap-8">
-                    <!-- Noticias cargadas por JS irán aquí -->
+                    <!-- Las noticias generadas por Scroll Infinito aparecerán aquí -->
                 </div>
 
-                <!-- Elemento disparador (Trigger) para Scroll Infinito -->
+                <!-- Trigger para cargar más -->
                 <div id="loading-trigger" class="w-full text-center py-10 flex flex-col items-center justify-center border-t border-gray-200 mt-8">
                     <div id="spinner" class="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-gray-900 hidden"></div>
                     <p id="loading-text" class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-3">Scroll para cargar más</p>
                 </div>
             </div>
             
-            <!-- Sidebar con anuncio a la derecha (25%) -->
+            <!-- Sidebar con anuncio vertical -->
             <div class="hidden md:block md:w-1/4">
                 <div class="sticky top-6">
                     <span class="text-[10px] text-gray-400 uppercase tracking-widest block mb-2 text-center">Advertisement</span>
-                    <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer" class="block border border-gray-200 bg-[#f8f9fa] p-4 text-center">
-                        <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Foreverspin Ad Vertical" class="w-full h-auto object-contain">
+                    <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer" class="block border border-gray-200 bg-[#f8f9fa] p-4 text-center hover:opacity-90">
+                        <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Ad Vertical" class="w-full h-auto object-contain">
                     </a>
                 </div>
             </div>
@@ -195,7 +296,7 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Completo -->
     <footer class="border-t border-gray-300 mt-12 pt-8 pb-12 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center mb-8 border-b-2 border-black pb-2">
@@ -242,19 +343,21 @@
         </div>
     </footer>
 
+    <!-- ========================================== -->
+    <!-- SCRIPTS MÁGICOS Y CONEXIÓN DE RED -->
+    <!-- ========================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Configurar Fecha ---
+            
+            // 1. Configurar Fechas
             const dateElement = document.getElementById('current-date');
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             let today = new Date().toLocaleDateString('es-MX', options);
-            today = today.charAt(0).toUpperCase() + today.slice(1);
-            if (dateElement) dateElement.textContent = today;
+            if (dateElement) dateElement.textContent = today.charAt(0).toUpperCase() + today.slice(1);
             
             const sportDate = document.getElementById('sports-date');
-            if(sportDate) sportDate.textContent = `Actualizado ${new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit'})} ET`;
-
-            // --- Lógica Principal ---
+            
+            // 2. Variables de estado
             const newsContainer = document.getElementById('news-list-container');
             const loadingTrigger = document.getElementById('loading-trigger');
             const spinner = document.getElementById('spinner');
@@ -262,21 +365,19 @@
             const staticFrontpage = document.getElementById('static-frontpage');
             
             const apiKey = '1ed18e33d2034ae9e2197f7b86ebccf7';
-            const articlesPerPage = 10; 
-            
             let isLoading = false;
             let hasMore = true;
             
-            // Determinar en qué página estamos según la URL
+            // Leemos la URL para saber la página (Si es mayor a 1, ocultamos la portada)
             const urlParams = new URLSearchParams(window.location.search);
             let currentPage = parseInt(urlParams.get('page')) || 1;
-
-            // Ocultar portada estática si entran directo a otra página
             if (currentPage > 1 && staticFrontpage) {
                 staticFrontpage.style.display = 'none';
             }
 
-            // --- API: Deportes en Vivo ---
+            // ==============================================================
+            // API 1: DEPORTES EN VIVO (thesportsdb) - 5 peticiones cada 1m
+            // ==============================================================
             async function fetchSportsData() {
                 try {
                     const sportsGrid = document.getElementById('sports-grid');
@@ -306,67 +407,79 @@
                     }
                     sportsGrid.innerHTML = matchesHtml;
                     if(sportDate) sportDate.textContent = `Actualizado ${new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit'})} ET`;
-                } catch(error) { console.error("Error cargando deportes:", error); }
+                } catch(error) { console.error("Error deportes:", error); }
             }
             fetchSportsData();
-            setInterval(fetchSportsData, 60000); // 1 petición cada minuto
+            setInterval(fetchSportsData, 60000); // Repetir cada 1 min
 
-            // --- API: Rellenar Portada Estática con Proxies Robustos ---
+
+            // ==============================================================
+            // Datos de Respaldo (Backup) por si la API falla o se acaban los créditos
+            // ==============================================================
+            const fallbackArticles = Array.from({length: 30}).map((_, i) => ({
+                title: `Noticia Internacional Importante #${i+1}`,
+                description: `Este es un texto de respaldo automático. Ocurrió un fallo de red o se superó el límite de la API, pero el sitio sigue funcionando perfectamente simulando el contenido.`,
+                image: `https://picsum.photos/seed/${i+10}/400/300`, // Imágenes aleatorias garantizadas
+                url: '#',
+                author: 'Agencia EFE',
+                published_at: new Date().toISOString()
+            }));
+
+            // ==============================================================
+            // API 2: RELLENAR PORTADA ESTÁTICA (Mediastack) - IGNORA SIN IMAGEN
+            // ==============================================================
             async function fetchFrontpageNews() {
-                if(staticFrontpage && staticFrontpage.style.display !== 'none') {
+                if(!staticFrontpage || staticFrontpage.style.display === 'none') return;
+                
+                try {
+                    // Pedimos un límite alto (40) para poder descartar los que no tienen foto
+                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=40`;
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
+                    
+                    let validArticles = [];
+                    
                     try {
-                        const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=15&offset=50`;
+                        const response = await fetch(proxyUrl);
+                        const result = await response.json();
+                        const data = JSON.parse(result.contents);
                         
-                        // Arreglo de Proxies para probar uno por uno en caso de fallos
-                        const proxyUrls = [
-                            `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`,
-                            `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(apiUrl)}`
-                        ];
-                        
-                        let data = null;
-
-                        for (const proxyUrl of proxyUrls) {
-                            try {
-                                const response = await fetch(proxyUrl);
-                                if (!response.ok) continue;
-
-                                if (proxyUrl.includes('allorigins')) {
-                                    const result = await response.json();
-                                    if (result.contents) {
-                                        data = JSON.parse(result.contents);
-                                        break;
-                                    }
-                                } else {
-                                    data = await response.json();
-                                    break;
-                                }
-                            } catch (e) {
-                                console.warn(`Fallo temporal con el proxy: ${proxyUrl}`);
-                            }
-                        }
-
+                        // FILTRO CRÍTICO: Si no trae imagen, lo descartamos
                         if (data && data.data) {
-                            const frontpageNodes = document.querySelectorAll('#static-frontpage article');
-                            data.data.forEach((article, i) => {
-                                if (i < frontpageNodes.length) {
-                                    const node = frontpageNodes[i];
-                                    const img = node.querySelector('img:not(.w-16)'); 
-                                    const heading = node.querySelector('h2, h3, h4');
-                                    const desc = node.querySelector('p');
-                                    if (img && article.image) img.src = article.image;
-                                    if (heading) heading.textContent = article.title;
-                                    if (desc && article.description) desc.textContent = article.description.substring(0, 120) + '...';
-                                    node.onclick = () => window.open(article.url, '_blank');
-                                    node.classList.add('cursor-pointer', 'hover:opacity-90', 'transition-opacity');
-                                }
-                            });
+                            validArticles = data.data.filter(article => article.image && article.image.trim() !== '');
                         }
-                    } catch (error) { console.error("Error portada estática:", error); }
-                }
-            }
-            if (currentPage === 1) fetchFrontpageNews();
+                    } catch (e) {
+                        console.warn("Fallo la API de Portada. Usando respaldo de emergencia.");
+                    }
 
-            // --- API: Cargar Página de "Lo más reciente" (Scroll) con Proxies Robustos ---
+                    // Si no conseguimos suficientes noticias con imagen, rellenamos con el Backup
+                    if (validArticles.length < 25) {
+                        validArticles = [...validArticles, ...fallbackArticles];
+                    }
+
+                    // Llenar todos los huecos estáticos (slots) de la portada
+                    const slots = document.querySelectorAll('.api-slot');
+                    slots.forEach((slot, index) => {
+                        const article = validArticles[index];
+                        if (article) {
+                            const img = slot.querySelector('.api-img');
+                            const title = slot.querySelector('.api-title');
+                            const desc = slot.querySelector('.api-desc');
+                            
+                            if (img) img.src = article.image;
+                            if (title) title.textContent = article.title;
+                            if (desc) desc.textContent = (article.description || '').substring(0, 100) + '...';
+                            
+                            slot.onclick = () => window.open(article.url, '_blank');
+                        }
+                    });
+
+                } catch (error) { console.error("Error portada:", error); }
+            }
+
+
+            // ==============================================================
+            // API 3: FEED DE LO MÁS RECIENTE (Scroll Infinito)
+            // ==============================================================
             async function fetchNewsPage(page) {
                 if (isLoading || !hasMore) return;
                 isLoading = true;
@@ -375,49 +488,35 @@
                 if(loadingText) loadingText.textContent = `Cargando página ${page}...`;
 
                 try {
-                    const offset = (page - 1) * articlesPerPage;
-                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=${articlesPerPage}&offset=${offset}`;
+                    const offset = (page - 1) * 20; // Pedimos 20 para filtrar y que queden ~10
+                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=20&offset=${offset}`;
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
                     
-                    // Alternativas de proxy para evadir errores de red "Failed to fetch"
-                    const proxyUrls = [
-                        `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`,
-                        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(apiUrl)}`
-                    ];
-                    
-                    let data = null;
+                    let validArticles = [];
 
-                    // Intentar cargar desde el primer proxy, si falla salta al siguiente
-                    for (const proxyUrl of proxyUrls) {
-                        try {
-                            const response = await fetch(proxyUrl);
-                            if (!response.ok) continue;
-
-                            if (proxyUrl.includes('allorigins')) {
-                                const result = await response.json();
-                                if (result.contents) {
-                                    data = JSON.parse(result.contents);
-                                    break;
-                                }
-                            } else {
-                                data = await response.json();
-                                break;
-                            }
-                        } catch (e) {
-                            console.warn(`Fallo de conexión con proxy: ${proxyUrl}`);
+                    try {
+                        const response = await fetch(proxyUrl);
+                        const result = await response.json();
+                        const data = JSON.parse(result.contents);
+                        
+                        // FILTRO: Solo agregar publicaciones si la API detecta que tienen imagen
+                        if (data && data.data) {
+                            validArticles = data.data.filter(a => a.image && a.image.trim() !== '');
                         }
+                    } catch (e) {
+                        console.warn("Error en Feed, usando fallback");
+                        validArticles = fallbackArticles.slice(0, 10); // 10 de respaldo
                     }
 
-                    if (!data) {
-                        throw new Error('Todos los servicios de proxy fallaron.');
-                    }
-
-                    if (data && data.data && data.data.length > 0) {
-                        data.data.forEach(article => {
+                    if (validArticles.length > 0) {
+                        // Limitar a dibujar solo 10 por página (ya filtrados con foto)
+                        const articlesToRender = validArticles.slice(0, 10);
+                        
+                        articlesToRender.forEach(article => {
                             const newsItem = document.createElement('article');
-                            newsItem.className = 'flex flex-col sm:flex-row gap-4 border-b border-gray-200 pb-6 group cursor-pointer';
+                            newsItem.className = 'flex flex-col sm:flex-row gap-6 border-b border-gray-200 pb-8 group cursor-pointer';
                             newsItem.onclick = () => window.open(article.url, '_blank');
                             
-                            const imageUrl = article.image || `https://placehold.co/400x400/f3f4f6/a1a1aa?text=${encodeURIComponent(article.source || 'The New Mexico Times')}`;
                             const dateStr = new Date(article.published_at).toLocaleDateString('es-MX', {day: 'numeric', month: 'long', year: 'numeric'});
 
                             newsItem.innerHTML = `
@@ -436,7 +535,7 @@
                                     </span>
                                 </div>
                                 <div class="w-full sm:w-[25%]">
-                                    <img src="${imageUrl}" alt="Imagen noticia" class="w-full h-32 md:h-40 object-cover" loading="lazy" onerror="this.src='https://placehold.co/400x400/f3f4f6/a1a1aa?text=News'">
+                                    <img src="${article.image}" alt="Imagen noticia" class="w-full h-32 md:h-40 object-cover rounded-sm">
                                 </div>
                             `;
                             newsContainer.appendChild(newsItem);
@@ -444,32 +543,36 @@
 
                         currentPage++;
                         
-                        // Actualizar URL de forma segura (sin recargar)
+                        // Actualizar la URL de forma elegante (?page=2) sin recargar
                         try {
                             const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + (currentPage - 1);
                             window.history.pushState({path:newUrl}, '', newUrl);
-                        } catch(e) {} // Ignorar en Iframes bloqueados
+                        } catch(e) {} 
+                        
                     } else {
+                        // Si después de filtrar no hay nada, detener scroll
                         hasMore = false;
-                        if(loadingText) loadingText.textContent = 'No hay más noticias disponibles.';
-                        if(spinner) spinner.style.display = 'none';
+                        if(loadingText) loadingText.textContent = 'No hay más noticias recientes disponibles.';
                     }
                 } catch (error) {
-                    console.error("Error cargando página de noticias:", error);
-                    if(loadingText) loadingText.innerHTML = '<span class="text-red-500">Error al cargar. Reintenta haciendo scroll.</span>';
+                    console.error("Error cargando feed:", error);
+                    if(loadingText) loadingText.textContent = 'Reintenta haciendo scroll.';
                 } finally {
                     isLoading = false;
                     if(spinner) spinner.style.display = 'none';
-                    if(hasMore && loadingText && !loadingText.innerHTML.includes('Error')) loadingText.textContent = 'Scroll para cargar más';
+                    if(hasMore && loadingText && !loadingText.innerHTML.includes('No hay')) loadingText.textContent = 'Scroll para cargar más';
                 }
             }
 
-            // --- Observador para Scroll Infinito ---
+            // Iniciar flujos al abrir la web
+            if (currentPage === 1) fetchFrontpageNews();
+            
+            // Configurar Scroll Infinito
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && !isLoading && hasMore) {
                     fetchNewsPage(currentPage);
                 }
-            }, { rootMargin: '300px' }); // Activa 300px antes de llegar al fondo
+            }, { rootMargin: '400px' }); // Cargar 400px antes de llegar al final
             
             if (loadingTrigger) {
                 observer.observe(loadingTrigger);
