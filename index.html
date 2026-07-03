@@ -7,32 +7,33 @@
     <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102308/The_new_Mexico_Times_Favicon_yuvm51.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
         .serif-font { font-family: 'Playfair Display', serif; }
-        .kicker { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #333; }
-        .section-header { border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 4px 0; margin-bottom: 16px; font-weight: bold; font-size: 14px; }
-        /* Ocultar barra de scroll para las pestañas */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .tab-active { margin-bottom: -1px; }
     </style>
 </head>
 <body class="bg-white text-black font-sans">
 
-    <div class="w-full bg-[#f8f9fa] border-b border-gray-100 py-2">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="text-[9px] text-gray-400 uppercase tracking-widest block mb-1">Advertisement</span>
+    <!-- Top Advertisement Banner -->
+    <div class="w-full bg-[#f8f9fa] border-b border-gray-200 py-2">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-[10px] text-gray-400 uppercase tracking-widest block mb-1">Advertisement</span>
             <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer">
-                <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Foreverspin" class="mx-auto max-h-[100px] object-contain">
+                <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Foreverspin Advertisement" class="mx-auto max-h-[120px] object-contain">
             </a>
         </div>
     </div>
 
-    <header class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex justify-between items-end pb-3">
+    <!-- Header Section -->
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-end pb-4">
+            <!-- Left Side: Search & Date -->
             <div class="w-1/3">
                 <svg class="w-4 h-4 mb-3 text-gray-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                <div id="current-date" class="text-[11px] font-bold text-gray-800">Cargando fecha...</div>
+                <div id="current-date" class="text-xs font-bold text-gray-800">Cargando fecha...</div>
             </div>
+
+            <!-- Center: Logo -->
             <div class="w-1/3 flex justify-center flex-col items-center">
                  <div class="text-[10px] font-bold tracking-wider uppercase text-gray-600 mb-2 flex space-x-3">
                     <a href="#" class="hover:text-black">U.S.</a>
@@ -41,21 +42,24 @@
                     <span class="text-black border-b border-black">Español</span>
                     <a href="#" class="hover:text-black">中文</a>
                 </div>
-                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-10 md:h-14 object-contain">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-12 md:h-16 object-contain">
             </div>
+
+            <!-- Right Side: Subscribe & Social -->
             <div class="w-1/3 flex flex-col items-end justify-between h-full space-y-3">
                 <div class="flex space-x-2">
-                    <button class="bg-[#567b95] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-sm hover:bg-[#326891]">Subscribe for $0.25/Week</button>
-                    <button class="bg-[#567b95] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-sm hover:bg-[#326891]">Log In</button>
+                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891]">Subscribe for $0.25/Week</button>
+                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891]">Log In</button>
                 </div>
-                <div class="text-[11px] font-medium text-gray-800">
+                <div class="text-xs font-medium text-gray-800">
                     <span class="text-gray-500">Síguenos:</span> <a href="#" class="hover:underline">Facebook</a> <a href="#" class="hover:underline">WhatsApp</a>
                 </div>
             </div>
         </div>
 
-        <nav class="border-t border-b border-black py-1.5 mt-2">
-            <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[12px] font-medium text-gray-900">
+        <!-- Navigation Bar -->
+        <nav class="border-t border-b border-black py-2 mt-2">
+            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] font-medium text-gray-900">
                 <li><a href="#" class="hover:underline">Mundo</a></li>
                 <li><a href="#" class="hover:underline">Estados Unidos</a></li>
                 <li><a href="#" class="hover:underline">América Latina</a></li>
@@ -69,316 +73,188 @@
         </nav>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         
+        <!-- Portada Inicial: Se oculta si page > 1 -->
         <div id="static-frontpage">
-            <!-- Promo Banner -->
-            <div class="flex justify-between items-center border border-gray-300 p-2 mb-6">
-                <div class="flex items-center w-1/2 pr-4 border-r border-gray-300">
-                    <img src="https://images.unsplash.com/photo-1590080603774-722a94511d54?auto=format&fit=crop&w=100&h=60&q=80" alt="Promo" class="w-16 h-10 object-cover mr-3">
-                    <div>
-                        <h4 class="font-bold text-xs">La deuda de EE. UU. con Venezuela</h4>
-                        <p class="text-[10px] text-gray-500 line-clamp-1">Cada vez hay más expectativas sobre lo que el gobierno de Trump podría hacer.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-10 border-b border-gray-300 pb-8">
+                <!-- Columna Izquierda / Principal (Abarca 3 cols en lg) -->
+                <div class="lg:col-span-3">
+                    <article class="mb-8 border-b border-gray-200 pb-6 flex flex-col md:flex-row gap-6 group">
+                        <div class="w-full md:w-1/3 order-2 md:order-1">
+                            <h2 class="serif-font font-bold text-xl md:text-3xl leading-tight mb-3">La deuda de EE. UU. con Venezuela</h2>
+                            <p class="text-gray-600 text-sm md:text-base">Cada vez hay más expectativas sobre lo que el gobierno de Trump podría hacer para ayudar tras dos terremotos devastadores.</p>
+                        </div>
+                        <div class="w-full md:w-2/3 order-1 md:order-2">
+                            <img src="https://via.placeholder.com/600x400" alt="Noticia Principal" class="w-full h-auto object-cover">
+                        </div>
+                    </article>
+
+                    <!-- Subnoticias Principales -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <article class="group">
+                            <img src="https://via.placeholder.com/400x250" alt="Subnoticia 1" class="w-full h-48 object-cover mb-3">
+                            <h3 class="serif-font font-bold text-xl mb-2">El movimiento MAGA guarda silencio ante los millardos en ganancias personales de Trump</h3>
+                            <p class="text-gray-600 text-sm">Para muchos de sus seguidores, dichas ganancias son muestra de la perspicacia empresarial que siempre le han admirado.</p>
+                        </article>
+                        <article class="group">
+                            <img src="https://via.placeholder.com/400x250" alt="Subnoticia 2" class="w-full h-48 object-cover mb-3">
+                            <h3 class="serif-font font-bold text-xl mb-2">Ucrania intensifica la presión sobre Putin con ataques en Crimea</h3>
+                            <p class="text-gray-600 text-sm">Los bombardeos con drones y los problemas de abastecimiento buscan aumentar el costo de la guerra para el Kremlin.</p>
+                        </article>
                     </div>
                 </div>
-                <div class="flex items-center justify-between w-1/2 pl-4">
-                    <div class="flex items-center">
-                        <div class="bg-green-800 text-white font-bold font-serif text-xl px-2 py-1 mr-3">El Times</div>
-                        <div>
-                            <h4 class="font-bold text-xs">Suscribirse a El Times</h4>
-                            <p class="text-[10px] text-gray-500">Suscríbete para recibir por correo el boletín gratuito.</p>
-                        </div>
+
+                <!-- Columna Derecha Lateral -->
+                <div class="lg:col-span-1 border-t lg:border-t-0 lg:border-l border-gray-300 lg:pl-6 pt-6 lg:pt-0 flex flex-col gap-6">
+                    <div class="bg-green-800 text-white p-4 flex flex-col mb-4">
+                        <span class="serif-font font-bold text-2xl mb-2">El Times</span>
+                        <span class="font-bold text-sm">Suscribirse a El Times</span>
+                        <p class="text-xs mt-1 mb-3 opacity-90">Suscríbete para recibir por correo el boletín gratuito de The New Mexico Times en español.</p>
+                        <button class="bg-[#567b95] hover:bg-[#326891] text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded w-max">Suscribirse</button>
                     </div>
-                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase px-3 py-1.5 rounded-sm hover:bg-[#326891]">Suscribirse</button>
-                </div>
-            </div>
-
-            <!-- Hero Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8 border-b border-gray-300 pb-8">
-                <!-- Left Main Article -->
-                <article class="lg:col-span-8 flex flex-col">
-                    <img src="https://images.unsplash.com/photo-1568564321589-3e581d424a8e?auto=format&fit=crop&w=800&h=450&q=80" alt="Trump" class="w-full h-auto object-cover mb-3">
-                    <span class="text-right text-[9px] text-gray-400 mb-2">Pete Marovich para The New York Times</span>
-                    <h2 class="serif-font font-bold text-3xl leading-tight mb-3">El movimiento MAGA guarda silencio ante los millardos en ganancias personales de Trump</h2>
-                    <p class="text-gray-700 text-[15px] mb-3">Para muchos de sus seguidores, dichas ganancias son muestra de la perspicacia empresarial que siempre le han admirado.</p>
-                    <span class="text-[10px] text-gray-500">Hace 3 h . Por EMILY DAVIES</span>
-                </article>
-
-                <!-- Right Articles -->
-                <div class="lg:col-span-4 flex flex-col border-l border-gray-200 pl-6 space-y-6">
-                    <article>
-                        <h3 class="serif-font font-bold text-xl leading-tight mb-2">Ucrania intensifica la presión sobre Putin con ataques en Crimea</h3>
-                        <div class="flex">
-                            <p class="text-gray-600 text-[13px] mr-3 flex-grow">Los bombardeos con drones, los problemas de abastecimiento y los apagones en la península anexada por Rusia buscan aumentar el costo de la guerra para el Kremlin.</p>
-                            <img src="https://images.unsplash.com/photo-1584985223635-4309e3940149?auto=format&fit=crop&w=100&h=100&q=80" alt="Crimea" class="w-20 h-20 object-cover">
-                        </div>
+                    <article class="border-b border-gray-200 pb-6 group">
+                        <h4 class="serif-font font-bold text-lg mb-2">Lionel Messi, eterno y fugaz</h4>
+                        <p class="text-gray-600 text-sm mb-2">¿Cómo están disfrutando sus legiones de fans la que podría ser la última Copa Mundial de su ídolo?</p>
+                        <img src="https://via.placeholder.com/300x200" alt="Lateral 1" class="w-full h-auto object-cover">
                     </article>
-                    <div class="border-t border-gray-200 pt-4"></div>
-                    <article>
-                        <img src="https://images.unsplash.com/photo-1518605368461-1e1252281136?auto=format&fit=crop&w=400&h=200&q=80" alt="Messi" class="w-full h-32 object-cover mb-2">
-                        <h3 class="serif-font font-bold text-lg mb-1">Lionel Messi, eterno y fugaz</h3>
-                        <p class="text-gray-600 text-[13px] mb-2">¿Cómo están disfrutando sus legiones de fans la que podría ser la última Copa Mundial de su ídolo? Me sumergí en una multitud que ovacionaba su nombre para averiguarlo.</p>
-                        <span class="text-[9px] text-gray-500 uppercase">Hace 12 h . Por SAM ANDERSON</span>
-                    </article>
-                    <div class="border-t border-gray-200 pt-4"></div>
-                    <article>
-                        <span class="kicker block mb-1">Análisis Noticioso</span>
-                        <h3 class="serif-font font-bold text-lg mb-2">¿El estadio más grande del mundo puede explicar la economía global?</h3>
-                        <div class="flex">
-                            <p class="text-gray-600 text-[13px] mr-3 flex-grow">Las altas tasas de crecimiento y el auge de las exportaciones en Vietnam ocultan profundas frustraciones en uno de los países más ambiciosos.</p>
-                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=100&h=100&q=80" alt="Estadio" class="w-16 h-16 object-cover">
-                        </div>
+                    <article class="group">
+                        <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1 block">Análisis Noticioso</span>
+                        <h4 class="serif-font font-bold text-lg mb-2">¿El estadio más grande del mundo puede explicar la economía global?</h4>
+                        <p class="text-gray-600 text-sm">Las altas tasas de crecimiento y el auge de las exportaciones ocultan profundas frustraciones en uno de los países más ambiciosos.</p>
                     </article>
                 </div>
-            </div>
-
-            <!-- 4 Columns Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8 border-b border-gray-300 pb-8">
-                <article>
-                    <img src="https://images.unsplash.com/photo-1565545260175-19e0efafbd81?auto=format&fit=crop&w=300&h=200&q=80" alt="Vance" class="w-full h-36 object-cover mb-2">
-                    <h3 class="serif-font font-bold text-base">JD Vance y Melania Trump también registraron fuertes aumentos en sus ingresos en 2025</h3>
-                </article>
-                <article>
-                    <img src="https://images.unsplash.com/photo-1541480601022-2308c0f02487?auto=format&fit=crop&w=300&h=200&q=80" alt="Taylor" class="w-full h-36 object-cover mb-2">
-                    <h3 class="serif-font font-bold text-base">Lo que sabemos (hasta ahora) sobre la boda de Taylor Swift y Travis Kelce</h3>
-                </article>
-                <article>
-                    <span class="text-[9px] text-gray-500 uppercase block mb-1">EE. UU. a los 250 años</span>
-                    <img src="https://images.unsplash.com/photo-1552335198-d28c2e6f43e5?auto=format&fit=crop&w=300&h=200&q=80" alt="EEUU" class="w-full h-36 object-cover mb-2">
-                    <h3 class="serif-font font-bold text-base">¿Cuál es la polémica por los eventos de celebración del 250.º aniversario de EE. UU.?</h3>
-                </article>
-                <article>
-                    <span class="text-[9px] text-gray-500 uppercase block mb-1">Pregúntale a Well</span>
-                    <img src="https://images.unsplash.com/photo-1498837167922-41c53bbf4326?auto=format&fit=crop&w=300&h=200&q=80" alt="Salud" class="w-full h-36 object-cover mb-2">
-                    <h3 class="serif-font font-bold text-base">¿Por qué ya no como tanto como antes?</h3>
-                </article>
-            </div>
-
-            <!-- 3 Columns Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-b border-gray-300 pb-8">
-                <article>
-                    <img src="https://images.unsplash.com/photo-1606553833890-449e7bdf51ff?auto=format&fit=crop&w=400&h=300&q=80" alt="Estefan" class="w-full h-56 object-cover mb-2">
-                    <h3 class="serif-font font-bold text-lg">Gloria y Emily Estefan encontraron un nuevo ritmo en el teatro</h3>
-                </article>
-                <article>
-                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=400&h=300&q=80" alt="ICE" class="w-full h-56 object-cover mb-2">
-                    <h3 class="serif-font font-bold text-lg">El ICE refuerza sus operativos y llega a 10.000 detenciones en 5 días</h3>
-                </article>
-                <article>
-                    <img src="https://images.unsplash.com/photo-1542602148-522616df0b21?auto=format&fit=crop&w=400&h=300&q=80" alt="Rescate" class="w-full h-56 object-cover mb-2">
-                    <h3 class="serif-font font-bold text-lg">Ocho días bajo los escombros: el rescate que emocionó a Venezuela</h3>
-                </article>
             </div>
 
             <!-- Sports Widget -->
             <div class="mb-12 border-b border-gray-300 pb-6">
-                <h3 class="font-bold text-lg mb-4">Partidos de hoy</h3>
+                <div class="flex justify-between items-end mb-4">
+                    <h3 class="font-bold text-lg">Partidos de hoy</h3>
+                    <span id="sports-date" class="text-xs text-gray-500">Actualizando...</span>
+                </div>
                 <div id="sports-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-                    <div>
-                        <span class="text-red-600 font-bold text-xs uppercase mb-2 block">EN VIVO Medio tiempo</span>
-                        <div class="flex justify-between mb-1"><span class="flex items-center"><img src="https://flagcdn.com/w20/eg.png" class="mr-2"> Egipto</span> <b>1</b></div>
-                        <div class="flex justify-between"><span class="flex items-center"><img src="https://flagcdn.com/w20/au.png" class="mr-2"> Australia</span> <b>0</b></div>
-                    </div>
-                    <div>
-                        <span class="text-gray-500 text-xs font-bold mb-2 block">6 p.m. ET</span>
-                        <div class="flex justify-between mb-1"><span class="flex items-center"><img src="https://flagcdn.com/w20/cv.png" class="mr-2"> Cabo Verde</span> </div>
-                        <div class="flex justify-between"><span class="flex items-center"><img src="https://flagcdn.com/w20/ar.png" class="mr-2"> Argentina</span> </div>
-                    </div>
-                    <div>
-                        <span class="text-gray-500 text-xs font-bold mb-2 block">9:30 p.m. ET</span>
-                        <div class="flex justify-between mb-1"><span class="flex items-center"><img src="https://flagcdn.com/w20/gh.png" class="mr-2"> Ghana</span> </div>
-                        <div class="flex justify-between"><span class="flex items-center"><img src="https://flagcdn.com/w20/co.png" class="mr-2"> Colombia</span> </div>
-                    </div>
+                    <!-- Los resultados deportivos se cargarán aquí -->
+                    <div class="text-gray-500 text-xs animate-pulse">Cargando resultados en vivo...</div>
                 </div>
-                <div class="flex justify-between text-xs mt-4">
-                    <a href="#" class="font-bold hover:underline">Revisa el calendario completo ›</a>
-                    <span class="text-gray-500" id="sports-date">Actualizado 2:51 p.m. ET</span>
+                <div class="mt-4">
+                    <a href="#" class="text-xs text-black font-bold hover:underline">Revisa el calendario completo ›</a>
                 </div>
             </div>
-
-            <!-- Especial Section -->
-            <div class="mb-8">
-                <div class="section-header flex justify-between">
-                    <span>Especial</span>
-                    <a href="#" class="font-normal text-[11px] text-gray-500 hover:underline">Más en Especial ›</a>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <article>
-                        <img src="https://images.unsplash.com/photo-1504386106331-3e4e71712b38?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2">
-                        <h3 class="serif-font font-bold text-base">Europa se enfrenta a temperaturas récord. Esto es lo que hay que saber</h3>
-                    </article>
-                    <article>
-                        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2">
-                        <h3 class="serif-font font-bold text-base">Qué es un domo de calor y por qué está aumentando las temperaturas</h3>
-                    </article>
-                    <article>
-                        <img src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2">
-                        <h3 class="serif-font font-bold text-base">Cómo dormir mejor cuando hace calor</h3>
-                    </article>
-                    <article>
-                        <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2">
-                        <h3 class="serif-font font-bold text-base">7 consejos para lidiar con el calor extremo</h3>
-                    </article>
-                </div>
-            </div>
-
-            <!-- Ad Block -->
-            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-100 py-4 my-8 text-center">
-                 <span class="text-[9px] text-gray-400 uppercase tracking-widest block mb-2">Advertisement</span>
-                 <a href="https://foreverspin.com" target="_blank"><img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" class="mx-auto max-h-[80px] object-contain"></a>
-            </div>
-
-             <!-- Estados Unidos Section -->
-             <div class="mb-8">
-                <div class="section-header flex justify-between">
-                    <span>Estados Unidos</span>
-                    <a href="#" class="font-normal text-[11px] text-gray-500 hover:underline">Más en Estados Unidos ›</a>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <article><img src="https://images.unsplash.com/photo-1556098048-b3917d5e49bb?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">¿Qué tanto le preocupan a Trump los conflictos de intereses?</h3></article>
-                    <article><img src="https://images.unsplash.com/photo-1502809737437-1d85c70dd2ca?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">Escalaron el Empire State para comprometerse. Terminaron detenidos.</h3></article>
-                    <article><img src="https://images.unsplash.com/photo-1616091216791-a5360b5ce777?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">Estos son algunos detalles de la boda de Taylor Swift en el Madison.</h3></article>
-                    <article><img src="https://images.unsplash.com/photo-1555512214-9988118d098e?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">Los ingresos de Trump durante su presidencia no tienen precedente.</h3></article>
-                </div>
-            </div>
-
-            <!-- Notas de Bienestar Section -->
-            <div class="mb-8">
-                <div class="section-header flex justify-between">
-                    <span>Notas de bienestar</span>
-                    <a href="#" class="font-normal text-[11px] text-gray-500 hover:underline">Más en Notas de bienestar ›</a>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <article><img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">Consejos para soportar una 'cúpula de calor'</h3></article>
-                    <article><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">¿Los medicamentos para adelgazar también alargan la vida?</h3></article>
-                    <article><img src="https://images.unsplash.com/photo-1601275868399-45be52414777?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">La ciencia detrás de los alimentos fermentados</h3></article>
-                    <article><img src="https://images.unsplash.com/photo-1502920514313-52581002a659?auto=format&fit=crop&w=300&h=250&q=80" class="w-full h-40 object-cover mb-2"><h3 class="serif-font font-bold text-base">¿El ejercicio intenso hace que se dispare mi cortisol?</h3></article>
-                </div>
-            </div>
-
-            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-100 py-4 my-10 text-center">
-                <span class="text-[9px] text-gray-400 uppercase tracking-widest block mb-2">Advertisement</span>
-                <a href="https://foreverspin.com" target="_blank"><img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" class="mx-auto max-h-[80px] object-contain"></a>
+            
+            <!-- Banner Ad -->
+            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-200 py-4 mb-12 flex justify-center">
+                <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer">
+                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Ad" class="max-h-[120px] object-contain">
+                </a>
             </div>
         </div>
 
-        <div id="latest-news-section" class="mt-8">
-            <!-- Tabs / Header -->
-            <div class="border-b border-black flex items-center pt-2">
-                <div class="border-t-2 border-l border-r border-black border-t-black px-4 py-2 font-bold text-[13px] relative bg-white -mb-[1px]">
+        <!-- SECCIÓN DE NOTICIAS CON SCROLL INFINITO (Lo más reciente) -->
+        <div class="w-full">
+            <!-- Pestañas Recreadas Exactamente como la Imagen -->
+            <div class="border-t-[1.5px] border-black flex items-end pt-0">
+                <!-- Pestaña Activa: Lo más reciente -->
+                <div class="border border-gray-300 border-b-white bg-white px-5 py-2 text-[#333] font-bold text-[15px] tab-active z-10 cursor-default">
                     Lo más reciente
                 </div>
-                <div class="flex-grow border-b border-black h-full"></div>
-                <div class="flex items-center text-gray-500 text-xs px-4 h-full border-b border-black -mb-[1px] cursor-pointer hover:text-black">
-                    <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <!-- Pestaña Inactiva: Buscar -->
+                <div class="px-5 py-2 text-gray-500 font-medium text-[15px] flex items-center cursor-pointer hover:text-gray-800 transition-colors">
+                    <svg class="w-[18px] h-[18px] mr-1.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     Buscar
                 </div>
             </div>
+            <!-- Línea inferior que conecta las pestañas -->
+            <div class="border-b border-gray-300 w-full mb-8"></div>
+        </div>
 
-            <!-- List Layout Container -->
-            <div class="flex flex-col md:flex-row mt-6 gap-8 relative">
-                
-                <!-- Main Content (News List) -->
-                <div id="news-list-container" class="w-full md:w-2/3 flex flex-col">
-                    <!-- Las noticias de Mediastack en formato lista se inyectarán aquí -->
+        <div class="w-full flex flex-col md:flex-row gap-8">
+            <!-- Feed de Noticias a la izquierda (75%) -->
+            <div class="w-full md:w-3/4">
+                <div id="news-list-container" class="flex flex-col gap-8">
+                    <!-- Noticias cargadas por JS irán aquí -->
                 </div>
 
-                <!-- Right Sidebar (Sticky Ad) -->
-                <aside class="hidden md:block w-1/3">
-                    <div class="sticky top-6">
-                        <div class="bg-[#f8f9fa] border border-gray-200 p-4 text-center">
-                            <span class="text-[9px] text-gray-400 uppercase tracking-widest block mb-4">Advertisement</span>
-                            <a href="https://foreverspin.com" target="_blank">
-                                <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Ad" class="mx-auto max-w-[200px] h-[300px] object-contain">
-                            </a>
-                        </div>
-                    </div>
-                </aside>
+                <!-- Elemento disparador (Trigger) para Scroll Infinito -->
+                <div id="loading-trigger" class="w-full text-center py-10 flex flex-col items-center justify-center border-t border-gray-200 mt-8">
+                    <div id="spinner" class="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-gray-900 hidden"></div>
+                    <p id="loading-text" class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-3">Scroll para cargar más</p>
+                </div>
             </div>
             
-            <!-- Loading Spinner Trigger -->
-            <div id="loading-trigger" class="w-full text-center py-12 flex flex-col items-center justify-center mt-8 border-t border-gray-200 md:w-2/3">
-                <div id="spinner" class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
-                <p id="loading-text" class="text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-4">Obteniendo más noticias...</p>
+            <!-- Sidebar con anuncio a la derecha (25%) -->
+            <div class="hidden md:block md:w-1/4">
+                <div class="sticky top-6">
+                    <span class="text-[10px] text-gray-400 uppercase tracking-widest block mb-2 text-center">Advertisement</span>
+                    <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer" class="block border border-gray-200 bg-[#f8f9fa] p-4 text-center">
+                        <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Foreverspin Ad Vertical" class="w-full h-auto object-contain">
+                    </a>
+                </div>
             </div>
         </div>
+
     </main>
 
+    <!-- Footer -->
     <footer class="border-t border-gray-300 mt-12 pt-8 pb-12 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center mb-8 border-b-2 border-black pb-2">
-                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-6 object-contain">
-                <a href="#" class="text-[#567b95] text-xs hover:underline font-medium">Go to Home Page »</a>
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-8 object-contain">
+                <a href="#" class="text-[#567b95] text-sm hover:underline font-medium">Go to Home Page »</a>
             </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-[12px] font-medium text-gray-800">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-[13px] font-medium text-gray-800">
                 <div>
-                    <h3 class="uppercase font-bold mb-3 tracking-wider text-[10px]">News</h3>
-                    <ul class="space-y-1.5">
-                        <li><a href="#" class="hover:underline">World</a></li>
-                        <li><a href="#" class="hover:underline">U.S.</a></li>
-                        <li><a href="#" class="hover:underline">Politics</a></li>
-                        <li><a href="#" class="hover:underline">N.M.</a></li>
-                        <li><a href="#" class="hover:underline">Business</a></li>
-                        <li><a href="#" class="hover:underline">Tech</a></li>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">News</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">World</a></li><li><a href="#" class="hover:underline">U.S.</a></li><li><a href="#" class="hover:underline">Politics</a></li><li><a href="#" class="hover:underline">N.M.</a></li><li><a href="#" class="hover:underline">Business</a></li><li><a href="#" class="hover:underline">Tech</a></li><li><a href="#" class="hover:underline">Science</a></li><li><a href="#" class="hover:underline">Health</a></li><li><a href="#" class="hover:underline">Sports</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="uppercase font-bold mb-3 tracking-wider text-[10px]">Opinion</h3>
-                    <ul class="space-y-1.5">
-                        <li><a href="#" class="hover:underline">Today's Opinion</a></li>
-                        <li><a href="#" class="hover:underline">Op-Ed Columnists</a></li>
-                        <li><a href="#" class="hover:underline">Editorials</a></li>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Opinion</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Today's Opinion</a></li><li><a href="#" class="hover:underline">Op-Ed Columnists</a></li><li><a href="#" class="hover:underline">Editorials</a></li><li><a href="#" class="hover:underline">Op-Ed Contributors</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="uppercase font-bold mb-3 tracking-wider text-[10px]">Arts</h3>
-                    <ul class="space-y-1.5">
-                        <li><a href="#" class="hover:underline">Today's Arts</a></li>
-                        <li><a href="#" class="hover:underline">Art & Design</a></li>
-                        <li><a href="#" class="hover:underline">Books</a></li>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Arts</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Today's Arts</a></li><li><a href="#" class="hover:underline">Art & Design</a></li><li><a href="#" class="hover:underline">Books</a></li><li><a href="#" class="hover:underline">Movies</a></li><li><a href="#" class="hover:underline">Music</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="uppercase font-bold mb-3 tracking-wider text-[10px]">Living</h3>
-                    <ul class="space-y-1.5">
-                        <li><a href="#" class="hover:underline">Automobiles</a></li>
-                        <li><a href="#" class="hover:underline">Crossword</a></li>
-                        <li><a href="#" class="hover:underline">Food</a></li>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Living</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Automobiles</a></li><li><a href="#" class="hover:underline">Crossword</a></li><li><a href="#" class="hover:underline">Food</a></li><li><a href="#" class="hover:underline">Travel</a></li>
                     </ul>
                 </div>
-                <div class="border-l border-gray-200 pl-6">
-                    <h3 class="uppercase font-bold mb-3 tracking-wider text-[10px]">Subscribe</h3>
-                    <ul class="space-y-2 font-bold mb-4">
-                        <li class="flex items-center"><span class="mr-2 text-lg">🗞</span> <a href="#" class="hover:underline">Home Delivery</a></li>
+                <div class="border-l border-gray-300 pl-6">
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Subscribe</h3>
+                    <ul class="space-y-3 font-bold mb-6">
+                        <li class="flex items-center"><span class="mr-2 border border-black px-1 text-[10px]">🗞</span> <a href="#" class="hover:underline">Home Delivery</a></li>
                         <li class="flex items-center"><span class="mr-2 text-lg font-serif">𝕿</span> <a href="#" class="hover:underline">Digital Subscriptions</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="mt-12 text-center flex flex-wrap justify-center gap-x-3 gap-y-2 text-[10px] text-gray-500 border-t border-gray-200 pt-4">
+            <div class="mt-12 text-center flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px] text-gray-500 border-t border-gray-200 pt-4">
                 <span>© 2026 The New Mexico Times Company</span>
-                <a href="#" class="hover:underline">Contact Us</a>
-                <a href="#" class="hover:underline">Privacy</a>
-                <a href="#" class="hover:underline">Terms of Service</a>
+                <a href="#" class="hover:underline">Contact Us</a><a href="#" class="hover:underline">Privacy</a><a href="#" class="hover:underline">Terms of Service</a>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Configurar Fecha del Encabezado
+            // --- Configurar Fecha ---
             const dateElement = document.getElementById('current-date');
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             let today = new Date().toLocaleDateString('es-MX', options);
             today = today.charAt(0).toUpperCase() + today.slice(1);
             if (dateElement) dateElement.textContent = today;
             
-            // Actualizar fecha pequeña de deportes
             const sportDate = document.getElementById('sports-date');
-            if(sportDate) sportDate.textContent = `Actualizado ${new Date().toLocaleDateString('es-MX', {month: 'short', day: 'numeric'})}, ${new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit'})} ET`;
+            if(sportDate) sportDate.textContent = `Actualizado ${new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit'})} ET`;
 
-            // Lógica de Paginación y API Mediastack
+            // --- Lógica Principal ---
             const newsContainer = document.getElementById('news-list-container');
             const loadingTrigger = document.getElementById('loading-trigger');
             const spinner = document.getElementById('spinner');
@@ -386,42 +262,36 @@
             const staticFrontpage = document.getElementById('static-frontpage');
             
             const apiKey = '1ed18e33d2034ae9e2197f7b86ebccf7';
-            const articlesPerPage = 6;
+            const articlesPerPage = 10; 
             
             let isLoading = false;
             let hasMore = true;
             
-            // Leemos si entran directo a ?page=2 o más
+            // Determinar en qué página estamos según la URL
             const urlParams = new URLSearchParams(window.location.search);
             let currentPage = parseInt(urlParams.get('page')) || 1;
 
-            // Si es mayor a 1 desde el inicio, ocultamos la portada estática
-            if (currentPage > 1) {
+            // Ocultar portada estática si entran directo a otra página
+            if (currentPage > 1 && staticFrontpage) {
                 staticFrontpage.style.display = 'none';
             }
 
-            // --- NUEVO: API de Deportes en Vivo (5 peticiones cada 1 minuto) ---
+            // --- API: Deportes en Vivo ---
             async function fetchSportsData() {
                 try {
                     const sportsGrid = document.getElementById('sports-grid');
-                    if (!sportsGrid) return;
+                    if (!sportsGrid || staticFrontpage.style.display === 'none') return;
                     
-                    // Array de 5 equipos para hacer exactamente 5 peticiones a la API proporcionada
                     const teamsToSearch = ['Arsenal', 'Barcelona', 'Chelsea', 'Juventus', 'Liverpool'];
-                    
                     const requests = teamsToSearch.map(team => 
-                        fetch(`https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=${team}`)
-                            .then(res => res.json())
+                        fetch(`https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=${team}`).then(res => res.json())
                     );
-
                     const results = await Promise.all(requests);
                     
                     let matchesHtml = '';
-                    // Formatear 3 tarjetas visuales a partir de los equipos obtenidos
                     for(let i=0; i<3; i++) {
                         const t1 = results[i]?.teams?.[0];
                         const t2 = results[i+1]?.teams?.[0] || results[4]?.teams?.[0]; 
-                        
                         if(t1 && t2) {
                             const score1 = Math.floor(Math.random() * 4);
                             const score2 = Math.floor(Math.random() * 4);
@@ -435,175 +305,172 @@
                         }
                     }
                     sportsGrid.innerHTML = matchesHtml;
-                    
                     if(sportDate) sportDate.textContent = `Actualizado ${new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit'})} ET`;
-                    
-                } catch(error) {
-                    console.error("Error cargando deportes:", error);
-                }
+                } catch(error) { console.error("Error cargando deportes:", error); }
             }
-            
-            // Ejecutar inmediatamente y programar intervalo de 1 minuto (60000ms)
             fetchSportsData();
-            setInterval(fetchSportsData, 60000);
+            setInterval(fetchSportsData, 60000); // 1 petición cada minuto
 
-            // --- NUEVO: Rellenar la portada de Página 1 con Mediastack ---
+            // --- API: Rellenar Portada Estática con Proxies Robustos ---
             async function fetchFrontpageNews() {
-                try {
-                    // Offset 50 para asegurar que no salgan las mismas noticias repetidas que en "Lo más reciente"
-                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=25&offset=50`;
-                    let data = null;
+                if(staticFrontpage && staticFrontpage.style.display !== 'none') {
                     try {
-                        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
-                        const response = await fetch(proxyUrl);
-                        const result = await response.json();
-                        data = JSON.parse(result.contents);
-                    } catch (e) {
-                        const proxyUrl2 = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
-                        const response2 = await fetch(proxyUrl2);
-                        data = await response2.json();
-                    }
+                        const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=15&offset=50`;
+                        
+                        // Arreglo de Proxies para probar uno por uno en caso de fallos
+                        const proxyUrls = [
+                            `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`,
+                            `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(apiUrl)}`
+                        ];
+                        
+                        let data = null;
 
-                    if (data && data.data) {
-                        const frontpageNodes = document.querySelectorAll('#static-frontpage article');
-                        data.data.forEach((article, i) => {
-                            if (i < frontpageNodes.length) {
-                                const node = frontpageNodes[i];
-                                const img = node.querySelector('img:not(.w-16)'); // Evita reemplazar íconos de autores
-                                const heading = node.querySelector('h2, h3, h4');
-                                const desc = node.querySelector('p');
+                        for (const proxyUrl of proxyUrls) {
+                            try {
+                                const response = await fetch(proxyUrl);
+                                if (!response.ok) continue;
 
-                                if (img) img.src = article.image || `https://placehold.co/400x250/f3f4f6/a1a1aa?text=${encodeURIComponent(article.source || 'News')}`;
-                                if (heading) heading.textContent = article.title;
-                                if (desc && article.description) desc.textContent = article.description.substring(0, 120) + '...';
-                                
-                                // Volvemos interactivo todo el bloque para que puedan leer la noticia
-                                node.onclick = () => window.open(article.url, '_blank');
-                                node.classList.add('cursor-pointer', 'hover:opacity-90', 'transition-opacity');
+                                if (proxyUrl.includes('allorigins')) {
+                                    const result = await response.json();
+                                    if (result.contents) {
+                                        data = JSON.parse(result.contents);
+                                        break;
+                                    }
+                                } else {
+                                    data = await response.json();
+                                    break;
+                                }
+                            } catch (e) {
+                                console.warn(`Fallo temporal con el proxy: ${proxyUrl}`);
                             }
-                        });
-                    }
-                } catch (error) {
-                    console.error("Error actualizando portada estática:", error);
+                        }
+
+                        if (data && data.data) {
+                            const frontpageNodes = document.querySelectorAll('#static-frontpage article');
+                            data.data.forEach((article, i) => {
+                                if (i < frontpageNodes.length) {
+                                    const node = frontpageNodes[i];
+                                    const img = node.querySelector('img:not(.w-16)'); 
+                                    const heading = node.querySelector('h2, h3, h4');
+                                    const desc = node.querySelector('p');
+                                    if (img && article.image) img.src = article.image;
+                                    if (heading) heading.textContent = article.title;
+                                    if (desc && article.description) desc.textContent = article.description.substring(0, 120) + '...';
+                                    node.onclick = () => window.open(article.url, '_blank');
+                                    node.classList.add('cursor-pointer', 'hover:opacity-90', 'transition-opacity');
+                                }
+                            });
+                        }
+                    } catch (error) { console.error("Error portada estática:", error); }
                 }
             }
+            if (currentPage === 1) fetchFrontpageNews();
 
-            // Solo actualizar la portada superior con la API si estamos en la página 1
-            if (currentPage === 1) {
-                fetchFrontpageNews();
-            }
-
+            // --- API: Cargar Página de "Lo más reciente" (Scroll) con Proxies Robustos ---
             async function fetchNewsPage(page) {
                 if (isLoading || !hasMore) return;
                 isLoading = true;
-
-                spinner.style.display = 'inline-block';
-                loadingText.textContent = `Cargando página ${page}...`;
+                
+                if(spinner) spinner.style.display = 'inline-block';
+                if(loadingText) loadingText.textContent = `Cargando página ${page}...`;
 
                 try {
                     const offset = (page - 1) * articlesPerPage;
                     const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=${articlesPerPage}&offset=${offset}`;
                     
-                    let data = null;
+                    // Alternativas de proxy para evadir errores de red "Failed to fetch"
+                    const proxyUrls = [
+                        `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`,
+                        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(apiUrl)}`
+                    ];
                     
-                    // Proxy robusto para evitar error de Mixed Content (HTTP to HTTPS)
-                    try {
-                        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
-                        const response = await fetch(proxyUrl);
-                        if (!response.ok) throw new Error("Proxy falló");
-                        const result = await response.json();
-                        data = JSON.parse(result.contents);
-                    } catch (err) {
-                        const proxyUrl2 = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
-                        const response2 = await fetch(proxyUrl2);
-                        data = await response2.json();
+                    let data = null;
+
+                    // Intentar cargar desde el primer proxy, si falla salta al siguiente
+                    for (const proxyUrl of proxyUrls) {
+                        try {
+                            const response = await fetch(proxyUrl);
+                            if (!response.ok) continue;
+
+                            if (proxyUrl.includes('allorigins')) {
+                                const result = await response.json();
+                                if (result.contents) {
+                                    data = JSON.parse(result.contents);
+                                    break;
+                                }
+                            } else {
+                                data = await response.json();
+                                break;
+                            }
+                        } catch (e) {
+                            console.warn(`Fallo de conexión con proxy: ${proxyUrl}`);
+                        }
                     }
 
-                    if (data && data.error) throw new Error(data.error.message || data.error.code);
+                    if (!data) {
+                        throw new Error('Todos los servicios de proxy fallaron.');
+                    }
 
-                    if (data && data.data && Array.isArray(data.data) && data.data.length > 0) {
+                    if (data && data.data && data.data.length > 0) {
                         data.data.forEach(article => {
-                            if (!article.title) return;
-
                             const newsItem = document.createElement('article');
-                            newsItem.className = 'flex flex-row py-6 border-b border-gray-200 group';
+                            newsItem.className = 'flex flex-col sm:flex-row gap-4 border-b border-gray-200 pb-6 group cursor-pointer';
+                            newsItem.onclick = () => window.open(article.url, '_blank');
                             
-                            // Formato de fecha (Columna Izquierda)
-                            const pubDate = new Date(article.published_at);
-                            const optionsDate = { day: 'numeric', month: 'long', year: 'numeric' };
-                            const dateStr = pubDate.toLocaleDateString('es-ES', optionsDate);
+                            const imageUrl = article.image || `https://placehold.co/400x400/f3f4f6/a1a1aa?text=${encodeURIComponent(article.source || 'The New Mexico Times')}`;
+                            const dateStr = new Date(article.published_at).toLocaleDateString('es-MX', {day: 'numeric', month: 'long', year: 'numeric'});
 
-                            // Imagen: placeholder elegante si Mediastack no manda imagen
-                            const imageUrl = article.image || `https://placehold.co/300x300/f3f4f6/a1a1aa?text=${encodeURIComponent(article.source || 'News')}`;
-                            const description = article.description || '';
-                            const author = article.author ? article.author.substring(0, 30) : (article.source || 'Redacción');
-                            
-                            // Estructura idéntica al "Lo más reciente" del NYT
                             newsItem.innerHTML = `
-                                <div class="w-24 flex-shrink-0 text-[10px] text-gray-500 pt-1 pr-4 hidden sm:block leading-tight text-right">
+                                <div class="w-full sm:w-[15%] text-[10px] text-gray-500 font-bold uppercase tracking-widest pt-1">
                                     ${dateStr}
                                 </div>
-                                <div class="flex-grow pr-0 sm:pr-6">
-                                    <h3 class="serif-font font-bold text-xl leading-tight mb-2 text-black group-hover:underline cursor-pointer">
-                                        <a href="${article.url}" target="_blank" rel="noopener noreferrer">${article.title}</a>
+                                <div class="w-full sm:w-[60%] pr-4">
+                                    <h3 class="serif-font font-bold text-xl md:text-2xl leading-tight mb-2 text-black group-hover:underline">
+                                        ${article.title}
                                     </h3>
-                                    <p class="text-gray-600 text-[14px] mb-3 leading-snug">
-                                        ${description.substring(0, 150)}...
+                                    <p class="text-gray-700 text-sm mb-3">
+                                        ${(article.description || '').substring(0, 160)}...
                                     </p>
-                                    <div class="text-[9px] uppercase text-gray-500 tracking-wider">
-                                        Por ${author}
-                                    </div>
+                                    <span class="text-[10px] uppercase text-gray-400 tracking-wider">
+                                        Por ${article.author || article.source || 'Redacción'}
+                                    </span>
                                 </div>
-                                <div class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] flex-shrink-0 ml-4 sm:ml-0">
-                                    <a href="${article.url}" target="_blank" rel="noopener noreferrer">
-                                        <img src="${imageUrl}" alt="Noticia" class="w-full h-full object-cover rounded-sm bg-gray-100" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f3f4f6/a1a1aa?text=Img'">
-                                    </a>
+                                <div class="w-full sm:w-[25%]">
+                                    <img src="${imageUrl}" alt="Imagen noticia" class="w-full h-32 md:h-40 object-cover" loading="lazy" onerror="this.src='https://placehold.co/400x400/f3f4f6/a1a1aa?text=News'">
                                 </div>
                             `;
                             newsContainer.appendChild(newsItem);
                         });
 
-                        // Actualizar URL sin recargar
-                        try {
-                            const newUrl = window.location.pathname + `?page=${page}`;
-                            window.history.pushState({ path: newUrl }, '', newUrl);
-                        } catch (e) { /* Ignorar error en entornos Sandbox/iFrame */ }
-
                         currentPage++;
-
-                        if (data.data.length < articlesPerPage) {
-                            hasMore = false;
-                            spinner.style.display = 'none';
-                            loadingText.textContent = 'Fin de las noticias.';
-                        } else {
-                            spinner.style.display = 'none';
-                            loadingText.textContent = 'Desplaza hacia abajo para ver más...';
-                        }
+                        
+                        // Actualizar URL de forma segura (sin recargar)
+                        try {
+                            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + (currentPage - 1);
+                            window.history.pushState({path:newUrl}, '', newUrl);
+                        } catch(e) {} // Ignorar en Iframes bloqueados
                     } else {
                         hasMore = false;
-                        spinner.style.display = 'none';
-                        loadingText.textContent = 'No hay más noticias disponibles.';
+                        if(loadingText) loadingText.textContent = 'No hay más noticias disponibles.';
+                        if(spinner) spinner.style.display = 'none';
                     }
                 } catch (error) {
-                    spinner.style.display = 'none';
-                    loadingText.innerHTML = `<span class="text-red-600 text-xs text-center inline-block"><b>Error de API:</b><br>${error.message}</span>`;
-                    setTimeout(() => { isLoading = false; loadingText.textContent = 'Intenta hacer scroll de nuevo.'; }, 5000); 
+                    console.error("Error cargando página de noticias:", error);
+                    if(loadingText) loadingText.innerHTML = '<span class="text-red-500">Error al cargar. Reintenta haciendo scroll.</span>';
                 } finally {
                     isLoading = false;
+                    if(spinner) spinner.style.display = 'none';
+                    if(hasMore && loadingText && !loadingText.innerHTML.includes('Error')) loadingText.textContent = 'Scroll para cargar más';
                 }
             }
 
-            // Carga forzada de la primera tanda al abrir la web
-            fetchNewsPage(currentPage);
-
-            // Observador para Scroll Infinito
+            // --- Observador para Scroll Infinito ---
             const observer = new IntersectionObserver((entries) => {
-                const entry = entries[0];
-                if (entry.isIntersecting && !isLoading && hasMore) {
+                if (entries[0].isIntersecting && !isLoading && hasMore) {
                     fetchNewsPage(currentPage);
                 }
-            }, { rootMargin: '100px' });
-
+            }, { rootMargin: '300px' }); // Activa 300px antes de llegar al fondo
+            
             if (loadingTrigger) {
                 observer.observe(loadingTrigger);
             }
