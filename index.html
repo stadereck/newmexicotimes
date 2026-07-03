@@ -243,30 +243,48 @@
             // --- Lógica de Noticias ---
             const newsContainer = document.getElementById('news-container');
             const loadingTrigger = document.getElementById('loading-trigger');
-            const apiKey = '07de9427ebb74632aa2eaf9ede11e8af';
+            const apiKey = '1ed18e33d2034ae9e2197f7b86ebccf7';
 
             // Función para obtener noticias una sola vez usando un Proxy
             async function fetchNews() {
                 try {
-                    // Usamos el proxy para que el navegador no bloquee la petición (CORS)
-                    const apiUrl = `https://newsapi.org/v2/everything?q=mexico OR latinoamerica OR mundo&language=es&sortBy=publishedAt&pageSize=6&apiKey=${apiKey}`;
-                    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
-                    
-                    const response = await fetch(proxyUrl);
-                    const data = await response.json();
+                    // API de Mediastack. El plan gratis requiere HTTP, el proxy nos ayudará a convertirlo a HTTPS.
+                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=6`;
+                    let data;
 
-                    if (data.status === 'ok' && data.articles) {
-                        data.articles.forEach(article => {
-                            if (article.title === '[Removed]') return;
+                    try {
+                        // Intento 1: Usar el endpoint 'get' de allorigins
+                        const proxyUrl1 = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
+                        const response = await fetch(proxyUrl1);
+                        if (!response.ok) throw new Error('Error en proxy primario');
+                        
+                        const result = await response.json();
+                        data = JSON.parse(result.contents);
+                    } catch (err1) {
+                        console.warn("Fallo el primer proxy, intentando servidor de respaldo...", err1);
+                        
+                        // Intento 2: Usar corsproxy.io
+                        const proxyUrl2 = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
+                        const response2 = await fetch(proxyUrl2);
+                        if (!response2.ok) throw new Error('Error en proxy secundario');
+                        data = await response2.json();
+                    }
+
+                    // Mediastack guarda los artículos en un arreglo llamado 'data'
+                    if (data && data.data) {
+                        data.data.forEach(article => {
+                            if (!article.title) return;
 
                             const newsItem = document.createElement('article');
                             newsItem.className = 'flex flex-col';
                             
-                            const imageUrl = article.urlToImage || 'https://via.placeholder.com/400x250?text=Sin+Imagen';
+                            // Mediastack usa 'image' en lugar de 'urlToImage'
+                            const imageUrl = article.image || 'https://via.placeholder.com/400x250?text=Sin+Imagen';
                             const description = article.description || 'Haz clic para leer el artículo completo...';
-                            const author = article.author ? article.author.substring(0, 30) : 'Redacción';
+                            const author = article.author ? article.author.substring(0, 30) : (article.source || 'Redacción');
                             
-                            const publishDate = new Date(article.publishedAt);
+                            // Mediastack usa 'published_at' en lugar de 'publishedAt'
+                            const publishDate = new Date(article.published_at);
                             const diffMs = new Date() - publishDate;
                             const diffHrs = Math.max(1, Math.floor(diffMs / (1000 * 60 * 60)));
 
@@ -291,15 +309,15 @@
                             loadingTrigger.style.display = 'none';
                         }
                     } else {
-                        console.error("Error desde NewsAPI:", data.message);
+                        console.error("Error desde Mediastack:", data ? data.error : 'Respuesta vacía');
                         if (loadingTrigger) {
-                             loadingTrigger.innerHTML = `<p class="text-red-500 text-center text-sm font-bold mt-4">Error de API: ${data.message}</p>`;
+                             loadingTrigger.innerHTML = `<p class="text-red-500 text-center text-sm font-bold mt-4">Error de API: ${data && data.error ? data.error.message : 'Error desconocido'}</p>`;
                         }
                     }
                 } catch (error) {
                     console.error("Error cargando el feed de noticias:", error);
                     if (loadingTrigger) {
-                         loadingTrigger.innerHTML = `<p class="text-red-500 text-center text-sm font-bold mt-4">Error de conexión al cargar las noticias.</p>`;
+                         loadingTrigger.innerHTML = `<p class="text-red-500 text-center text-sm font-bold mt-4">Error de conexión al cargar las noticias. (Proxy bloqueado)</p>`;
                     }
                 }
             }
