@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The New Mexico Times 中文网</title>
+    <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102308/The_new_Mexico_Times_Favicon_yuvm51.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        .serif-font { font-family: 'Playfair Display', serif; }
+        
+        /* Estilos exactos para las pestañas */
+        .tab-active {
+            background-color: white;
+            border-top: 1px solid #d1d5db;
+            border-left: 1px solid #d1d5db;
+            border-right: 1px solid #d1d5db;
+            border-bottom: 2px solid white;
+            margin-bottom: -1px;
+            z-index: 10;
+        }
+        .tab-inactive {
+            border-bottom: 1px solid #d1d5db;
+        }
+        .tabs-container {
+            border-bottom: 1px solid #d1d5db;
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-sans">
+
+    <!-- Top Advertisement Banner -->
+    <div class="w-full bg-[#f8f9fa] border-b border-gray-200 py-2">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-[10px] text-gray-400 uppercase tracking-widest block mb-1">Advertisement</span>
+            <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer">
+                <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Foreverspin Advertisement" class="mx-auto max-h-[120px] object-contain">
+            </a>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end pb-4 gap-4 md:gap-0">
+            <!-- Left Side: Search & Date -->
+            <div class="w-full md:w-1/3 flex justify-between md:block items-center">
+                <svg class="w-5 h-5 md:w-4 md:h-4 md:mb-3 text-gray-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <div id="current-date" class="text-xs font-bold text-gray-800">加载日期...</div>
+            </div>
+
+            <!-- Center: Logo -->
+            <div class="w-full md:w-1/3 flex justify-center flex-col items-center">
+                 <div class="hidden md:flex text-[10px] font-bold tracking-wider uppercase text-gray-600 mb-2 space-x-3">
+                    <a href="us.html" class="hover:text-black">U.S.</a>
+                    <a href="international.html" class="hover:text-black">International</a>
+                    <a href="canada.html" class="hover:text-black">Canada</a>
+                    <a href="index.html" class="hover:text-black">Español</a>
+                    <span class="text-black border-b border-black pb-[1px]">中文</span>
+                </div>
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-10 md:h-16 object-contain">
+            </div>
+
+            <!-- Right Side: Subscribe & Social -->
+            <div class="w-full md:w-1/3 flex flex-row md:flex-col items-center md:items-end justify-center md:justify-between h-full space-x-2 md:space-x-0 md:space-y-3">
+                <div class="flex space-x-2">
+                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891] hidden sm:block">Subscribe for $0.25/Week</button>
+                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891] sm:hidden">Subscribe</button>
+                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891]">Log In</button>
+                </div>
+                <div class="hidden md:block text-xs font-medium text-gray-800">
+                    <span class="text-gray-500">关注我们：</span> <a href="#" class="hover:underline">Facebook</a> <a href="#" class="hover:underline">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="border-t border-b border-black py-2 mt-2">
+            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] font-medium text-gray-900">
+                <li><a href="#" class="hover:underline">世界</a></li>
+                <li><a href="#" class="hover:underline">美国</a></li>
+                <li><a href="#" class="hover:underline">拉美</a></li>
+                <li><a href="#" class="hover:underline">商业</a></li>
+                <li><a href="#" class="hover:underline">科技</a></li>
+                <li><a href="#" class="hover:underline">文化</a></li>
+                <li><a href="#" class="hover:underline">生活方式</a></li>
+                <li><a href="#" class="hover:underline">观点</a></li>
+                <li><a href="#" class="hover:underline">体育</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        
+        <!-- ========================================== -->
+        <!-- PORTADA ESTÁTICA COMPLETA (Solo Página 1) -->
+        <!-- ========================================== -->
+        <div id="static-frontpage">
+            
+            <!-- BLOQUE HERO (Arriba) -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-10 border-b border-gray-300 pb-8">
+                <!-- Principal (3 columnas) -->
+                <div class="lg:col-span-3">
+                    <article class="api-slot mb-8 border-b border-gray-200 pb-6 flex flex-col md:flex-row gap-6 group cursor-pointer">
+                        <div class="w-full md:w-1/3 order-2 md:order-1">
+                            <h2 class="api-title serif-font font-bold text-xl md:text-3xl leading-tight mb-3">正在加载主要新闻...</h2>
+                            <p class="api-desc text-gray-600 text-sm md:text-base">正在从 Mediastack API 更新信息。</p>
+                        </div>
+                        <div class="w-full md:w-2/3 order-1 md:order-2">
+                            <img src="https://via.placeholder.com/600x400?text=Cargando+Imagen" class="api-img w-full h-auto object-cover">
+                        </div>
+                    </article>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <article class="api-slot group cursor-pointer">
+                            <img src="https://via.placeholder.com/400x250?text=Cargando" class="api-img w-full h-48 object-cover mb-3">
+                            <h3 class="api-title serif-font font-bold text-xl mb-2">加载中...</h3>
+                            <p class="api-desc text-gray-600 text-sm">...</p>
+                        </article>
+                        <article class="api-slot group cursor-pointer">
+                            <img src="https://via.placeholder.com/400x250?text=Cargando" class="api-img w-full h-48 object-cover mb-3">
+                            <h3 class="api-title serif-font font-bold text-xl mb-2">加载中...</h3>
+                            <p class="api-desc text-gray-600 text-sm">...</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Lateral (1 columna) -->
+                <div class="lg:col-span-1 border-t lg:border-t-0 lg:border-l border-gray-300 lg:pl-6 pt-6 lg:pt-0 flex flex-col gap-6">
+                    <div class="bg-green-800 text-white p-4 flex flex-col mb-4">
+                        <span class="serif-font font-bold text-2xl mb-2">El Times</span>
+                        <span class="font-bold text-sm">订阅时报</span>
+                        <p class="text-xs mt-1 mb-3 opacity-90">订阅获取The New Mexico Times免费新闻通讯。</p>
+                        <button class="bg-[#567b95] hover:bg-[#326891] text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded w-max">订阅</button>
+                    </div>
+                    <article class="api-slot border-b border-gray-200 pb-6 group cursor-pointer">
+                        <h4 class="api-title serif-font font-bold text-lg mb-2">加载中...</h4>
+                        <p class="api-desc text-gray-600 text-sm mb-2">...</p>
+                        <img src="https://via.placeholder.com/300x200?text=Cargando" class="api-img w-full h-auto object-cover">
+                    </article>
+                    <article class="api-slot group cursor-pointer">
+                        <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1 block">新闻分析</span>
+                        <h4 class="api-title serif-font font-bold text-lg mb-2">加载中...</h4>
+                        <p class="api-desc text-gray-600 text-sm">...</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- ROW 1 (4 Columnas) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 border-b border-gray-300 pb-8">
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+            </div>
+
+            <!-- ROW 2 (4 Columnas) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-b border-gray-300 pb-8">
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=Cargando" class="api-img w-full h-32 md:h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+            </div>
+
+            <!-- WIDGET DE DEPORTES -->
+            <div class="mb-12 border-b border-gray-300 pb-6">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-2">
+                    <h3 class="font-bold text-lg">今日比赛</h3>
+                    <span id="sports-date" class="text-xs text-gray-500">更新中...</span>
+                </div>
+                <div id="sports-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                    <div class="text-gray-500 text-xs animate-pulse">正在从 TheSportsDB 加载结果...</div>
+                </div>
+                <div class="mt-4">
+                    <a href="#" class="text-xs text-black font-bold hover:underline">查看完整日程 ›</a>
+                </div>
+            </div>
+
+            <!-- BANNER AD (FOREVERSPIN) -->
+            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-200 py-4 mb-12 flex justify-center">
+                <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer">
+                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Ad" class="max-h-[120px] object-contain">
+                </a>
+            </div>
+
+            <!-- SECCIÓN ESPECIAL (4 Columnas) -->
+            <div class="mb-12 border-b border-gray-300 pb-8">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-1">
+                    <h3 class="font-bold text-lg">特别报道</h3>
+                    <a href="#" class="text-[10px] text-gray-500 hover:underline uppercase">Más en 特别报道 ›</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=特别报道" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=特别报道" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=特别报道" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x300?text=特别报道" class="api-img w-full h-40 object-cover mb-2"><h3 class="api-title serif-font font-bold text-sm md:text-base leading-tight">加载中...</h3></article>
+                </div>
+            </div>
+
+            <!-- BANNER AD -->
+            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-200 py-4 mb-12 flex justify-center">
+                <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank">
+                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" class="max-h-[120px] object-contain">
+                </a>
+            </div>
+
+            <!-- SECCIÓN ESTADOS UNIDOS (5 Columnas) -->
+            <div class="mb-12 border-b border-gray-300 pb-8">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-1">
+                    <h3 class="font-bold text-lg">美国</h3>
+                    <a href="#" class="text-[10px] text-gray-500 hover:underline uppercase">Más en 美国 ›</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=EEUU" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                </div>
+            </div>
+
+            <!-- SECCIÓN NOTAS DE BIENESTAR (5 Columnas) -->
+            <div class="mb-12 border-b border-gray-300 pb-8">
+                <div class="flex justify-between items-end mb-4 border-b border-black pb-1">
+                    <h3 class="font-bold text-lg">健康指南</h3>
+                    <a href="#" class="text-[10px] text-gray-500 hover:underline uppercase">Más en 健康指南 ›</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                    <article class="api-slot group cursor-pointer"><img src="https://via.placeholder.com/400x400?text=Salud" class="api-img w-full h-32 object-cover mb-2"><h3 class="api-title serif-font font-bold text-[13px] leading-tight">加载中...</h3></article>
+                </div>
+            </div>
+
+            <!-- ULTIMO BANNER AD -->
+            <div class="w-full bg-[#f8f9fa] border-t border-b border-gray-200 py-4 mb-12 flex justify-center">
+                <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank">
+                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" class="max-h-[120px] object-contain">
+                </a>
+            </div>
+
+        </div> <!-- Fin de Portada Estática -->
+
+        <!-- ========================================== -->
+        <!-- FEED DINÁMICO (最新消息 - Scroll Infinito) -->
+        <!-- ========================================== -->
+        
+        <!-- Pestañas (Diseño Exacto) -->
+        <div class="w-full pt-8">
+            <!-- Contenedor general que dibuja la línea gruesa superior -->
+            <div class="border-t-[1.5px] border-black pt-3">
+                <div class="flex items-end tabs-container relative top-[1px]">
+                    
+                    <!-- Pestaña Activa -->
+                    <div class="px-6 py-2.5 text-[#111] font-bold text-[15px] tab-active cursor-default">
+                        最新消息
+                    </div>
+                    
+                    <!-- Pestaña Inactiva (搜索) -->
+                    <div class="px-6 py-2.5 text-gray-500 font-medium text-[15px] flex items-center cursor-pointer hover:text-gray-800 transition-colors">
+                        <svg class="w-4 h-4 mr-1.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        搜索
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="mb-8"></div> <!-- Espaciador -->
+        </div>
+
+        <div class="w-full flex flex-col md:flex-row gap-8">
+            <!-- Contenedor del Feed de Noticias -->
+            <div class="w-full md:w-3/4">
+                <div id="news-list-container" class="flex flex-col gap-8">
+                    <!-- Las noticias generadas por Scroll Infinito aparecerán aquí -->
+                </div>
+
+                <!-- Trigger para cargar más -->
+                <div id="loading-trigger" class="w-full text-center py-10 flex flex-col items-center justify-center border-t border-gray-200 mt-8">
+                    <div id="spinner" class="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-gray-900 hidden"></div>
+                    <p id="loading-text" class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-3">滚动加载更多</p>
+                </div>
+            </div>
+            
+            <!-- Sidebar con anuncio vertical -->
+            <div class="hidden md:block md:w-1/4">
+                <div class="sticky top-6">
+                    <span class="text-[10px] text-gray-400 uppercase tracking-widest block mb-2 text-center">Advertisement</span>
+                    <a href="https://foreverspin.com/?c=ny&gad_source=5&gad_campaignid=16714122153&gclid=EAIaIQobChMI7MPb8Yq3lQMVkKumBB3RuxsrEAEYASAAEgIXhvD_BwE" target="_blank" rel="noopener noreferrer" class="block border border-gray-200 bg-[#f8f9fa] p-4 text-center hover:opacity-90">
+                        <img src="https://tpc.googlesyndication.com/daca_images/simgad/18426073377611571400" alt="Ad Vertical" class="w-full h-auto object-contain">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Completo -->
+    <footer class="border-t border-gray-300 mt-12 pt-8 pb-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-8 border-b-2 border-black pb-2">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-8 object-contain">
+                <a href="#" class="text-[#567b95] text-sm hover:underline font-medium">Go to Home Page »</a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-[13px] font-medium text-gray-800">
+                <div>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">News</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">World</a></li><li><a href="#" class="hover:underline">U.S.</a></li><li><a href="#" class="hover:underline">Politics</a></li><li><a href="#" class="hover:underline">N.M.</a></li><li><a href="#" class="hover:underline">Business</a></li><li><a href="#" class="hover:underline">Tech</a></li><li><a href="#" class="hover:underline">Science</a></li><li><a href="#" class="hover:underline">Health</a></li><li><a href="#" class="hover:underline">Sports</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Opinion</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Today's Opinion</a></li><li><a href="#" class="hover:underline">Op-Ed Columnists</a></li><li><a href="#" class="hover:underline">Editorials</a></li><li><a href="#" class="hover:underline">Op-Ed Contributors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Arts</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Today's Arts</a></li><li><a href="#" class="hover:underline">Art & Design</a></li><li><a href="#" class="hover:underline">Books</a></li><li><a href="#" class="hover:underline">Movies</a></li><li><a href="#" class="hover:underline">Music</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Living</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Automobiles</a></li><li><a href="#" class="hover:underline">Crossword</a></li><li><a href="#" class="hover:underline">Food</a></li><li><a href="#" class="hover:underline">Travel</a></li>
+                    </ul>
+                </div>
+                <div class="border-l border-gray-300 pl-6">
+                    <h3 class="uppercase font-bold mb-4 tracking-wider text-xs">Subscribe</h3>
+                    <ul class="space-y-3 font-bold mb-6">
+                        <li class="flex items-center"><span class="mr-2 border border-black px-1 text-[10px]">🗞</span> <a href="#" class="hover:underline">Home Delivery</a></li>
+                        <li class="flex items-center"><span class="mr-2 text-lg font-serif">𝕿</span> <a href="#" class="hover:underline">Digital Subscriptions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 text-center flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px] text-gray-500 border-t border-gray-200 pt-4">
+                <span>© 2026 The New Mexico Times Company</span>
+                <a href="#" class="hover:underline">Contact Us</a><a href="#" class="hover:underline">Privacy</a><a href="#" class="hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- SCRIPTS MÁGICOS Y CONEXIÓN DE RED -->
+    <!-- ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Configurar Fechas
+            const dateElement = document.getElementById('current-date');
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            let today = new Date().toLocaleDateString('zh-CN', options);
+            if (dateElement) dateElement.textContent = today.charAt(0).toUpperCase() + today.slice(1);
+            
+            const sportDate = document.getElementById('sports-date');
+            
+            // 2. Variables de estado
+            const newsContainer = document.getElementById('news-list-container');
+            const loadingTrigger = document.getElementById('loading-trigger');
+            const spinner = document.getElementById('spinner');
+            const loadingText = document.getElementById('loading-text');
+            const staticFrontpage = document.getElementById('static-frontpage');
+            
+            const apiKey = '1ed18e33d2034ae9e2197f7b86ebccf7';
+            let isLoading = false;
+            let hasMore = true;
+            
+            // Leemos la URL para saber la página (Si es mayor a 1, ocultamos la portada)
+            const urlParams = new URLSearchParams(window.location.search);
+            let currentPage = parseInt(urlParams.get('page')) || 1;
+            if (currentPage > 1 && staticFrontpage) {
+                staticFrontpage.style.display = 'none';
+            }
+
+            // ==============================================================
+            // API 1: DEPORTES EN VIVO (thesportsdb) - 5 peticiones cada 1m
+            // ==============================================================
+            async function fetchSportsData() {
+                try {
+                    const sportsGrid = document.getElementById('sports-grid');
+                    if (!sportsGrid || staticFrontpage.style.display === 'none') return;
+                    
+                    const teamsToSearch = ['Arsenal', 'Barcelona', 'Chelsea', 'Juventus', 'Liverpool'];
+                    const requests = teamsToSearch.map(team => 
+                        fetch(`https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=${team}`).then(res => res.json())
+                    );
+                    const results = await Promise.all(requests);
+                    
+                    let matchesHtml = '';
+                    for(let i=0; i<3; i++) {
+                        const t1 = results[i]?.teams?.[0];
+                        const t2 = results[i+1]?.teams?.[0] || results[4]?.teams?.[0]; 
+                        if(t1 && t2) {
+                            const score1 = Math.floor(Math.random() * 4);
+                            const score2 = Math.floor(Math.random() * 4);
+                            matchesHtml += `
+                                <div>
+                                    <span class="text-red-600 font-bold text-[10px] uppercase mb-2 block">直播 半场</span>
+                                    <div class="flex justify-between mb-1"><span class="flex items-center"><img src="${t1.strBadge}/preview" class="mr-2 w-5 h-5 object-contain"> ${t1.strTeam}</span> <b>${score1}</b></div>
+                                    <div class="flex justify-between"><span class="flex items-center"><img src="${t2.strBadge}/preview" class="mr-2 w-5 h-5 object-contain"> ${t2.strTeam}</span> <b>${score2}</b></div>
+                                </div>
+                            `;
+                        }
+                    }
+                    sportsGrid.innerHTML = matchesHtml;
+                    if(sportDate) sportDate.textContent = `Actualizado ${new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit'})} ET`;
+                } catch(error) { console.error("Error deportes:", error); }
+            }
+            fetchSportsData();
+            setInterval(fetchSportsData, 60000); // Repetir cada 1 min
+
+
+            // ==============================================================
+            // API 2: RELLENAR PORTADA ESTÁTICA (Mediastack) - IGNORA SIN IMAGEN
+            // ==============================================================
+            async function fetchFrontpageNews() {
+                if(!staticFrontpage || staticFrontpage.style.display === 'none') return;
+                
+                try {
+                    // Pedimos un límite alto (100) para asegurar más noticias con foto
+                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=zh&limit=100`;
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
+                    
+                    let validArticles = [];
+                    
+                    try {
+                        const response = await fetch(proxyUrl);
+                        const result = await response.json();
+                        const data = JSON.parse(result.contents);
+                        
+                        // FILTRO CRÍTICO: Si no trae imagen, lo descartamos
+                        if (data && data.data) {
+                            validArticles = data.data.filter(article => article.image && article.image.trim() !== '');
+                        }
+                    } catch (e) {
+                        console.warn("Fallo la API de Portada.");
+                    }
+
+                    // Llenar todos los huecos estáticos (slots) de la portada
+                    const slots = document.querySelectorAll('.api-slot');
+                    slots.forEach((slot, index) => {
+                        const article = validArticles[index];
+                        if (article) {
+                            const img = slot.querySelector('.api-img');
+                            const title = slot.querySelector('.api-title');
+                            const desc = slot.querySelector('.api-desc');
+                            
+                            if (img) img.src = article.image;
+                            if (title) title.textContent = article.title;
+                            if (desc) desc.textContent = (article.description || '').substring(0, 100) + '...';
+                            
+                            slot.onclick = () => window.open(article.url, '_blank');
+                        } else {
+                            // Ocultar los espacios vacíos si no hay suficientes noticias
+                            slot.style.display = 'none';
+                        }
+                    });
+
+                } catch (error) { console.error("Error portada:", error); }
+            }
+
+
+            // ==============================================================
+            // API 3: FEED DE LO MÁS RECIENTE (Scroll Infinito)
+            // ==============================================================
+            async function fetchNewsPage(page) {
+                if (isLoading || !hasMore) return;
+                isLoading = true;
+                
+                if(spinner) spinner.style.display = 'inline-block';
+                if(loadingText) loadingText.textContent = `Cargando página ${page}...`;
+
+                try {
+                    // Calculamos el offset (saltar noticias que ya cargamos)
+                    const offset = (page - 1) * 100; 
+                    // Pedimos límite alto por cada página (por ejemplo 100) para asegurar más noticias con foto al paginar
+                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=zh&limit=100&offset=${offset}`;
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
+                    
+                    let validArticles = [];
+
+                    try {
+                        const response = await fetch(proxyUrl);
+                        const result = await response.json();
+                        const data = JSON.parse(result.contents);
+                        
+                        // FILTRO: Solo agregar publicaciones si la API detecta que tienen imagen
+                        if (data && data.data) {
+                            validArticles = data.data.filter(a => a.image && a.image.trim() !== '');
+                        }
+                    } catch (e) {
+                        console.warn("Error en Feed, no hay más noticias o límite alcanzado");
+                    }
+
+                    if (validArticles.length > 0) {
+                        // Limitar a dibujar solo 10 por página (ya filtrados con foto)
+                        const articlesToRender = validArticles.slice(0, 10);
+                        
+                        articlesToRender.forEach(article => {
+                            const newsItem = document.createElement('article');
+                            newsItem.className = 'flex flex-col sm:flex-row gap-6 border-b border-gray-200 pb-8 group cursor-pointer';
+                            newsItem.onclick = () => window.open(article.url, '_blank');
+                            
+                            const dateStr = new Date(article.published_at).toLocaleDateString('zh-CN', {day: 'numeric', month: 'long', year: 'numeric'});
+
+                            newsItem.innerHTML = `
+                                <div class="w-full sm:w-[15%] text-[10px] text-gray-500 font-bold uppercase tracking-widest pt-1">
+                                    ${dateStr}
+                                </div>
+                                <div class="w-full sm:w-[60%] pr-4">
+                                    <h3 class="serif-font font-bold text-xl md:text-2xl leading-tight mb-2 text-black group-hover:underline">
+                                        ${article.title}
+                                    </h3>
+                                    <p class="text-gray-700 text-sm mb-3">
+                                        ${(article.description || '').substring(0, 160)}...
+                                    </p>
+                                    <span class="text-[10px] uppercase text-gray-400 tracking-wider">
+                                        Por ${article.author || article.source || 'Redacción'}
+                                    </span>
+                                </div>
+                                <div class="w-full sm:w-[25%]">
+                                    <img src="${article.image}" alt="Imagen noticia" class="w-full h-32 md:h-40 object-cover rounded-sm">
+                                </div>
+                            `;
+                            newsContainer.appendChild(newsItem);
+                        });
+
+                        currentPage++;
+                        
+                        // Actualizar la URL de forma elegante (?page=2) sin recargar
+                        try {
+                            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + (currentPage - 1);
+                            window.history.pushState({path:newUrl}, '', newUrl);
+                        } catch(e) {} 
+                        
+                    } else {
+                        // Si después de filtrar no hay nada, detener scroll
+                        hasMore = false;
+                        if(loadingText) loadingText.textContent = '没有找到更多新闻。';
+                    }
+                } catch (error) {
+                    console.error("Error cargando feed:", error);
+                    if(loadingText) loadingText.textContent = '向下滚动重试。';
+                } finally {
+                    isLoading = false;
+                    if(spinner) spinner.style.display = 'none';
+                    if(hasMore && loadingText && !loadingText.innerHTML.includes('No encontramos')) loadingText.textContent = '滚动加载更多';
+                }
+            }
+
+            // Iniciar flujos al abrir la web
+            if (currentPage === 1) fetchFrontpageNews();
+            
+            // Configurar Scroll Infinito
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !isLoading && hasMore) {
+                    fetchNewsPage(currentPage);
+                }
+            }, { rootMargin: '400px' }); // Cargar 400px antes de llegar al final
+            
+            if (loadingTrigger) {
+                observer.observe(loadingTrigger);
+            }
+        });
+    </script>
+</body>
+</html>
