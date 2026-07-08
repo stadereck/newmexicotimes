@@ -42,32 +42,33 @@
 
     <!-- Header Section -->
     <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex justify-between items-end pb-4">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end pb-4 gap-4 md:gap-0">
             <!-- Left Side: Search & Date -->
-            <div class="w-1/3">
-                <svg class="w-4 h-4 mb-3 text-gray-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <div class="w-full md:w-1/3 flex justify-between md:block items-center">
+                <svg class="w-5 h-5 md:w-4 md:h-4 md:mb-3 text-gray-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 <div id="current-date" class="text-xs font-bold text-gray-800">Cargando fecha...</div>
             </div>
 
             <!-- Center: Logo -->
-            <div class="w-1/3 flex justify-center flex-col items-center">
-                 <div class="text-[10px] font-bold tracking-wider uppercase text-gray-600 mb-2 flex space-x-3">
+            <div class="w-full md:w-1/3 flex justify-center flex-col items-center">
+                 <div class="hidden md:flex text-[10px] font-bold tracking-wider uppercase text-gray-600 mb-2 space-x-3">
                     <a href="#" class="hover:text-black">U.S.</a>
                     <a href="#" class="hover:text-black">International</a>
                     <a href="#" class="hover:text-black">Canada</a>
                     <span class="text-black border-b border-black pb-[1px]">Español</span>
                     <a href="#" class="hover:text-black">中文</a>
                 </div>
-                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-12 md:h-16 object-contain">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1783102307/The_New_Mexico_Times_bzxmws.svg" alt="The New Mexico Times Logo" class="h-10 md:h-16 object-contain">
             </div>
 
             <!-- Right Side: Subscribe & Social -->
-            <div class="w-1/3 flex flex-col items-end justify-between h-full space-y-3">
+            <div class="w-full md:w-1/3 flex flex-row md:flex-col items-center md:items-end justify-center md:justify-between h-full space-x-2 md:space-x-0 md:space-y-3">
                 <div class="flex space-x-2">
-                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891]">Subscribe for $0.25/Week</button>
+                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891] hidden sm:block">Subscribe for $0.25/Week</button>
+                    <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891] sm:hidden">Subscribe</button>
                     <button class="bg-[#567b95] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm hover:bg-[#326891]">Log In</button>
                 </div>
-                <div class="text-xs font-medium text-gray-800">
+                <div class="hidden md:block text-xs font-medium text-gray-800">
                     <span class="text-gray-500">Síguenos:</span> <a href="#" class="hover:underline">Facebook</a> <a href="#" class="hover:underline">WhatsApp</a>
                 </div>
             </div>
@@ -414,26 +415,14 @@
 
 
             // ==============================================================
-            // Datos de Respaldo (Backup) por si la API falla o se acaban los créditos
-            // ==============================================================
-            const fallbackArticles = Array.from({length: 30}).map((_, i) => ({
-                title: `Noticia Internacional Importante #${i+1}`,
-                description: `Este es un texto de respaldo automático. Ocurrió un fallo de red o se superó el límite de la API, pero el sitio sigue funcionando perfectamente simulando el contenido.`,
-                image: `https://picsum.photos/seed/${i+10}/400/300`, // Imágenes aleatorias garantizadas
-                url: '#',
-                author: 'Agencia EFE',
-                published_at: new Date().toISOString()
-            }));
-
-            // ==============================================================
             // API 2: RELLENAR PORTADA ESTÁTICA (Mediastack) - IGNORA SIN IMAGEN
             // ==============================================================
             async function fetchFrontpageNews() {
                 if(!staticFrontpage || staticFrontpage.style.display === 'none') return;
                 
                 try {
-                    // Pedimos un límite alto (40) para poder descartar los que no tienen foto
-                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=40`;
+                    // Pedimos un límite alto (100) para asegurar más noticias con foto
+                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=100`;
                     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
                     
                     let validArticles = [];
@@ -448,12 +437,7 @@
                             validArticles = data.data.filter(article => article.image && article.image.trim() !== '');
                         }
                     } catch (e) {
-                        console.warn("Fallo la API de Portada. Usando respaldo de emergencia.");
-                    }
-
-                    // Si no conseguimos suficientes noticias con imagen, rellenamos con el Backup
-                    if (validArticles.length < 25) {
-                        validArticles = [...validArticles, ...fallbackArticles];
+                        console.warn("Fallo la API de Portada.");
                     }
 
                     // Llenar todos los huecos estáticos (slots) de la portada
@@ -470,6 +454,9 @@
                             if (desc) desc.textContent = (article.description || '').substring(0, 100) + '...';
                             
                             slot.onclick = () => window.open(article.url, '_blank');
+                        } else {
+                            // Ocultar los espacios vacíos si no hay suficientes noticias
+                            slot.style.display = 'none';
                         }
                     });
 
@@ -488,8 +475,10 @@
                 if(loadingText) loadingText.textContent = `Cargando página ${page}...`;
 
                 try {
-                    const offset = (page - 1) * 20; // Pedimos 20 para filtrar y que queden ~10
-                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=20&offset=${offset}`;
+                    // Calculamos el offset (saltar noticias que ya cargamos)
+                    const offset = (page - 1) * 100; 
+                    // Pedimos límite alto por cada página (por ejemplo 100) para asegurar más noticias con foto al paginar
+                    const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=es&limit=100&offset=${offset}`;
                     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
                     
                     let validArticles = [];
@@ -504,8 +493,7 @@
                             validArticles = data.data.filter(a => a.image && a.image.trim() !== '');
                         }
                     } catch (e) {
-                        console.warn("Error en Feed, usando fallback");
-                        validArticles = fallbackArticles.slice(0, 10); // 10 de respaldo
+                        console.warn("Error en Feed, no hay más noticias o límite alcanzado");
                     }
 
                     if (validArticles.length > 0) {
@@ -552,7 +540,7 @@
                     } else {
                         // Si después de filtrar no hay nada, detener scroll
                         hasMore = false;
-                        if(loadingText) loadingText.textContent = 'No hay más noticias recientes disponibles.';
+                        if(loadingText) loadingText.textContent = 'No encontramos más páginas de noticias.';
                     }
                 } catch (error) {
                     console.error("Error cargando feed:", error);
@@ -560,7 +548,7 @@
                 } finally {
                     isLoading = false;
                     if(spinner) spinner.style.display = 'none';
-                    if(hasMore && loadingText && !loadingText.innerHTML.includes('No hay')) loadingText.textContent = 'Scroll para cargar más';
+                    if(hasMore && loadingText && !loadingText.innerHTML.includes('No encontramos')) loadingText.textContent = 'Scroll para cargar más';
                 }
             }
 
